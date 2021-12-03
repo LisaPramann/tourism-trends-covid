@@ -21,7 +21,7 @@ eurostat_domestic_camping <- read_excel("./99_data-sets-raw/Eurostat/eurostat-do
 eurostat_domestic_hotel <- read_excel("./99_data-sets-raw/Eurostat/eurostat-domestic-hotels.xlsx") %>%
   mutate(across(where(is.character), ~na_if(., ":")))
 
-
+---
 
 #First Trends: Generally domestic tourism is the same in July/August 2019 compared to 2020/21 for some countries even increasing 
 #Domestic Tourists increasingly stayed ad campsites in July/August 2019 compared to 2020/21
@@ -34,7 +34,6 @@ select(c(States,`2019-07`,`2019-08`, `2020-07`,`2020-08`, `2021-07`, `2021-08`))
 
 summer_domestic <- eurostat_domestic %>%
   select(c(States,`2019-07`,`2019-08`, `2020-07`,`2020-08`, `2021-07`, `2021-08`))
-
 
 
 summer_domestic_camping <- eurostat_domestic_camping %>%
