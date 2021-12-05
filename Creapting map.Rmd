@@ -125,15 +125,10 @@ summer_europe_animation
 
 tmap_animation(
   summer_europe_animation, filename = "summer.gif",
-  delay = 500, width = 2400, height = 1200
+  delay = 500 
   )
 
-
-  tm_layout(legend.position = c("left", "bottom"))
-tmap_animation(
-  honey_animation, filename = "honey.gif",
-  delay = 50, width = 2400, height = 1200
-  )
+#add width = 400, height = 200
 ```
 
 
