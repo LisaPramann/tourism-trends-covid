@@ -21,7 +21,11 @@ library(rgeos)
 library(grid)
 library(viridis)
 #install.packages("giscoR")
+#install.packages("gifski")
+library(gifski)
 library(giscoR)
+library(plotly)
+library(magick)
 ```
 
 ```{r}
@@ -44,13 +48,20 @@ eurostat_total_camping_percent <- read_excel("./99_data-sets-raw/Eurostat/eurost
 #Domestic Tourists increasingly stayed ad campsites in July/August 2019 compared to 2020/21
   
 summer_total_perc <- eurostat_total_percent %>%
-  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`))
+  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`)) %>% 
+  dplyr::mutate(`2020-07`= as.numeric(`2020-07`),`2020-08`= as.numeric(`2020-08`),
+                `2021-07`= as.numeric(`2021-07`), `2021-08`= as.numeric(`2021-08`))
+
 
 summer_domestic_perc <- eurostat_domestic_percent %>%
-  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`))
+  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`)) %>% 
+  dplyr::mutate(`2020-07`= as.numeric(`2020-07`),`2020-08`= as.numeric(`2020-08`),
+                `2021-07`= as.numeric(`2021-07`), `2021-08`= as.numeric(`2021-08`))
 
 summer_domestic_camping_perc <- eurostat_domestic_camping_percent %>%
-  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`))
+  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`)) %>% 
+  dplyr::mutate(`2020-07`= as.numeric(`2020-07`),`2020-08`= as.numeric(`2020-08`),
+                `2021-07`= as.numeric(`2021-07`), `2021-08`= as.numeric(`2021-08`))
 ```
 
 
@@ -59,8 +70,7 @@ Get Geo-Data
 # Get shapes
 europe_countries  <- gisco_get_countries(region = c("EU"), resolution = "3",
   year = "2020",
-  epsg = "3035",
-)
+  epsg = "3035",)
 
 # Group by NUTS by country and convert to lines
 #country_lines <- nuts3 %>%
@@ -70,7 +80,7 @@ europe_countries  <- gisco_get_countries(region = c("EU"), resolution = "3",
 #  summarise(n = n()) %>%
 #  st_cast("MULTILINESTRING")
 
-europe_region = st_bbox(c(xmin = 2377294, xmax = 7453440,
+europe_region = st_bbox(c(xmin = 2377294, xmax = 6453440,
                       ymin = 1313597, ymax = 5628510))
 #Change bbox later!
 ```
@@ -87,16 +97,43 @@ Try tmap
 
 tm_shape(tourism_total, bbox = europe_region) +
   tm_borders() +
-  tm_polygons(col = "2020-07", 
-              style = "cont",
-              palette = "-viridis")
+  tm_polygons(col = "2020-07")
 
 
 
 ```
+Create Interactive map
+```{r}
+
+#Manipulating Data set 
+
+tourism_total_summer <- tourism_total %>%
+  dplyr::mutate(`2020`= (`2020-07`+`2020-08`)/2, `2021` = (`2021-07`+`2021-08`)/2) %>% 
+  pivot_longer(., cols=11:12, names_to = "year", values_to = "tourist_stays") %>% 
+
+#Create the interactive map gif
+
+summer_europe_animation <- tm_shape(tourism_total_summer, bbox = europe_region) +
+  tm_polygons(
+    col = "tourist_stays",
+    breaks = c(-80,-60,-50, -40, -30, -20, -10, 0, 10, 20)
+    ) +
+  tm_facets(along = "year")
 
 
+summer_europe_animation
+
+tmap_animation(
+  summer_europe_animation, filename = "summer.gif",
+  delay = 500, width = 2400, height = 1200
+  )
 
 
+  tm_layout(legend.position = c("left", "bottom"))
+tmap_animation(
+  honey_animation, filename = "honey.gif",
+  delay = 50, width = 2400, height = 1200
+  )
+```
 
 
