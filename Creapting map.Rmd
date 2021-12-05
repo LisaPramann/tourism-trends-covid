@@ -1,25 +1,30 @@
-E#urostat Data Set Percentage change compared to 2019
-#https://ec.europa.eu/eurostat/databrowser/view/TOUR_OCC_NIM__custom_1695889/default/line?lang=en
+---
+title: "Create Map"
+author: "Lisa Pramann"
+date: "12/5/2021"
+output: html_document
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
+Libaries needed
+```{r}
 library(foreign)
 library(tidyverse)
 library(readxl)
 library(sf)
 library(sp)
 library(tmap)
-library(maps)
-#install.packages("spData")
-library(spData)
+library(rgeos)
 library(grid)
 library(viridis)
-library(raster)
+#install.packages("giscoR")
+library(giscoR)
+```
 
---
-library(rnaturalearth)
-library(rnaturalearthdata)
-library(rgeos)
-
+```{r}
 #Percentage change compared to 2019
 eurostat_total_percent <- read_excel("./99_data-sets-raw/Eurostat/eurostat-total-percentage.xlsx") %>%
   mutate(across(where(is.character), ~na_if(., ":")))
@@ -46,59 +51,52 @@ summer_domestic_perc <- eurostat_domestic_percent %>%
 
 summer_domestic_camping_perc <- eurostat_domestic_camping_percent %>%
   dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`))
-
----
-#Create Map
-#Load packages (see above)
-  
-world <- st_read(system.file("shapes/world.gpkg", package="spData"))
-
-Europe <- world %>% 
-  filter(continent == "Europe")
+```
 
 
-tm_shape(Europe) +
-  tm_borders() +
+Get Geo-Data
+```{r}
+# Get shapes
+europe_countries  <- gisco_get_countries(region = c("EU"), resolution = "3",
+  year = "2020",
+  epsg = "3035",
+)
 
-europe_raster <- raster("elevation1x1_new.tif")
-# load shapefile for world
-#world_shape <- read_sf("ne_50m_admin_0_countries.shp")
- 
-europe_raster <- extent(-25,50,-35,70)
+# Group by NUTS by country and convert to lines
+#country_lines <- nuts3 %>%
+#  group_by(
+#    CNTR_CODE
+#  ) %>%
+#  summarise(n = n()) %>%
+#  st_cast("MULTILINESTRING")
 
-map_europe <- tm_shape(europe_raster) +
-  tm_raster()
-class(map_europe)
-
-
-
-  
-#OLD 
-#Get spatial Data from natural Data
-worldr <- ne_countries(scale = "medium", returnclass = "sf")
-Europe <- world %>% 
-  filter(continent == "Europe")
-
-
-ggplot(Europe) +
-  geom_sf() +
-  coord_sf(xlim = c(-25,50), ylim = c(35,70), expand = FALSE)
+europe_region = st_bbox(c(xmin = 2377294, xmax = 7453440,
+                      ymin = 1313597, ymax = 5628510))
+#Change bbox later!
+```
 
 
-
-Europe <- rnaturalearthdata::world %>% 
-  filter(continent == "Europe")
-  
-
-
-#Joining it with Dataset
-
+```{r}
 tourism_total <- left_join( 
-  summer_total_perc, world_map, 
-  by = c("States" = "name_long"))
+  europe_countries, summer_total_perc,
+  by = c("NAME_ENGL" = "States" ))
+```
+
+Try tmap
+```{r}
+
+tm_shape(tourism_total, bbox = europe_region) +
+  tm_borders() +
+  tm_polygons(col = "2020-07", 
+              style = "cont",
+              palette = "-viridis")
 
 
-tm_shape(europe_map) +
-  tm_borders() 
 
-tm_shape(Europe) + tm_polygons(col = "Median_income")
+```
+
+
+
+
+
+
