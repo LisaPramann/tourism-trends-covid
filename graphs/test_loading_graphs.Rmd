@@ -1,0 +1,16 @@
+---
+title: "Test loading graphs"
+author: "Lisa Pramann"
+date: "12/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+![](../graphs/tourism_summer_total.gif)
+![](../graphs/tourism_total_2020_2021.gif)
+
+
