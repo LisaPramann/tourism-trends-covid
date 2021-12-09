@@ -36,3 +36,5 @@ summer_domestic_perc <- eurostat_domestic_percent %>%
 
 summer_domestic_camping_perc <- eurostat_domestic_camping_percent %>%
   dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`)) 
+
+# Run source("98_data-wrangling-scripts/glimpse_eurostat_data.R") in the file you want to import the clean data to.

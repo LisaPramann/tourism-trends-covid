@@ -30,7 +30,8 @@ library(magick)
 ```{r}
 #Percentage change compared to 2019
 eurostat_total_percent <- read_excel("./99_data-sets-raw/Eurostat/eurostat-total-percentage.xlsx") %>%
-  mutate(across(where(is.character), ~na_if(., ":")))
+  mutate(across(where(is.character), ~na_if(., ":")))  %>% 
+  mutate_at(c(2:22), as.numeric, round, 2)
 
 eurostat_domestic_percent <- read_excel("./99_data-sets-raw/Eurostat/eurostat-domestic-percentage.xlsx") %>%
   mutate(across(where(is.character), ~na_if(., ":"))) %>% 
@@ -58,6 +59,8 @@ summer_domestic_perc <- eurostat_domestic_percent %>%
 summer_domestic_camping_perc <- eurostat_domestic_camping_percent %>%
   dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`)) 
 
+#Try th source out the loading and data wrangling
+source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
 ```
 
 
@@ -67,7 +70,6 @@ Get Geo-Data
 europe_countries  <- gisco_get_countries(region = c("EU"), resolution = "3",
   year = "2020",
   epsg = "3035",)
-
 
 europe_region = st_bbox(c(xmin = 2377294, xmax = 6453440,
                       ymin = 1313597, ymax = 5628510))
@@ -181,9 +183,9 @@ Open Issues with tmap:
 - add numbers to countries in png's 
 
 
-#Backlog 
+##Backlog 
 Backlog: Create Interactive map for percentage change in total number of tourism (summers)
-```{r, eval = FALSE, include=FALSE}
+#```{r, eval = FALSE, include=FALSE}
 
 
 tourism_total_01 <- left_join( 
@@ -219,4 +221,4 @@ tmap_animation(
   summer_europe_animation, filename = "graphs/tourism_summer_total.gif", width = 1700, height = 1200,
   delay = 500 
   )
-```
+#```

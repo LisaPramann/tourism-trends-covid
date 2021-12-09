@@ -1,0 +1,54 @@
+---
+title: "Plot total tourism Europe"
+author: "Lisa Pramann"
+date: "12/9/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries and data sets from seperatr script 
+```{r}
+library(tidyverse)
+
+source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
+source("98_data-wrangling-scripts/glimpse_covid_measures_index_europe.R") 
+
+```
+
+Mutating data sets  
+```{r}
+
+#glimpse(eurostat_total_percent)
+
+tourism_total_graph <- eurostat_total_percent %>% 
+  pivot_longer(., cols= 2:22, names_to = "year", values_to = "tourist_stays_percent") %>% 
+  filter(States == "European Union - 27 countries (from 2020)") %>% 
+  mutate(Month = lubridate::ym(year)) %>% 
+  arrange(Month) 
+  
+#glimpse(tourism_total_graph)
+#glimpse(data_covid_measures)
+
+#Join dataframes 
+tourism_total_graph_02 <- left_join( 
+  tourism_total_graph, data_covid_measures) %>% 
+  filter(!year == c("2020-01", "2020-02"))
+
+```
+
+First glimpse at data 
+```{r}
+
+tourism_total_graph_02 %>% 
+  ggplot() +
+  geom_line(aes(x = Month, y = tourist_stays_percent), color = "red") +
+  geom_line(aes(x = Month, y = mean_month), color = "blue") +
+  scale_y_continuous(breaks = c(-100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100)) +
+  theme_minimal() + 
+  xlab('Month') +
+  ylab('Change in Percent')
+```
+
