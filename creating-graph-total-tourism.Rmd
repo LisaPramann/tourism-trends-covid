@@ -12,7 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 Load libraries and data sets from seperatr script 
 ```{r}
 library(tidyverse)
-
 source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
 source("98_data-wrangling-scripts/glimpse_covid_measures_index_europe.R") 
 
@@ -32,9 +31,9 @@ tourism_total_graph <- eurostat_total_percent %>%
 #glimpse(tourism_total_graph)
 #glimpse(data_covid_measures)
 
-#Join dataframes 
+#Join dataframes and filter Jan/Feb 2020 to only get the pandemic-time-series
 tourism_total_graph_02 <- left_join( 
-  tourism_total_graph, data_covid_measures) %>% 
+  tourism_total_graph, covid_stats) %>% 
   filter(!year == c("2020-01", "2020-02"))
 
 ```
@@ -45,10 +44,15 @@ First glimpse at data
 tourism_total_graph_02 %>% 
   ggplot() +
   geom_line(aes(x = Month, y = tourist_stays_percent), color = "red") +
-  geom_line(aes(x = Month, y = mean_month), color = "blue") +
+  geom_line(aes(x = Month, y = mean_month_measures), color = "blue") +
   scale_y_continuous(breaks = c(-100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100)) +
   theme_minimal() + 
   xlab('Month') +
   ylab('Change in Percent')
+
+#Do more style things here 
+#Add background shadow for confirmed case data 
+
+
 ```
 
