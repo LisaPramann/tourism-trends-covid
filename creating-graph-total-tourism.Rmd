@@ -9,9 +9,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Load libraries and data sets from seperatr script 
+Load libraries and data sets from separate script 
 ```{r}
 library(tidyverse)
+library(hrbrthemes)
+library(plotly)
+library(viridis)
 source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
 source("98_data-wrangling-scripts/glimpse_covid_measures_index_europe.R") 
 
@@ -41,18 +44,29 @@ tourism_total_graph_02 <- left_join(
 First glimpse at data 
 ```{r}
 
-tourism_total_graph_02 %>% 
-  ggplot() +
-  geom_line(aes(x = Month, y = tourist_stays_percent), color = "red") +
-  geom_line(aes(x = Month, y = mean_month_measures), color = "blue") +
-  scale_y_continuous(breaks = c(-100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100)) +
-  theme_minimal() + 
-  xlab('Month') +
-  ylab('Change in Percent')
+p <- tourism_total_graph_02 %>% 
+  ggplot(aes(x=Month)) +
+  geom_line(aes(y = tourist_stays_percent), color = "#404788FF") +
+  geom_line(aes(y = mean_month_measures), color="#20A387FF") +
+  scale_y_continuous(limits = c(-100, 100), breaks = c(-100, -75, -50, -25, 0, 25, 50, 75, 100),
+    name = "Change (in %) / Covid-Measures (Index 0-100)") +
+  scale_x_date(limits = as.Date(c("2020-03-01","2021-09-01")),
+              date_breaks = "3 month",
+              date_minor_breaks = "month", 
+              date_labels = "%b (%y)") +
+  xlab("The Pandemic Months (March 2020 - September 2021)") +
+   theme_ipsum() +
+  theme(
+    axis.title.x = element_text(size=10),
+    axis.title.y = element_text( size=10),
+    axis.title.y.right = element_text(color = "#20A387FF", size=10)
+  )
 
-#Do more style things here 
-#Add background shadow for confirmed case data 
+#p
 
+p <- p %>% style(hoverinfo = "y")
+
+ggplotly(p)
 
 ```
 
