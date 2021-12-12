@@ -11,14 +11,18 @@ camp_dom_long = pivot_longer(eurostat_domestic_camping_percent, !States, names_t
 
 
 sum_dom_camp_long %>% 
+  na.omit() %>% 
   group_by(States) %>% 
-  mutate("average" = sum(value) / 4) %>% 
+  mutate("average" = mean(value)) %>% 
   subset(States != "Euro area") %>% 
   subset(States != "European Union - 27 countries (from 2020)") %>%
   subset(States != "European Union - 28 countries (2013-2020)") %>%
   subset(States != "Malta") %>%
   ggplot(aes(x = States, y = average, fill = average)) +
-  geom_col() +
+  geom_col(position = "identity") + #have to specify identity or dodge otherwise it will add all the same average values together per country
   coord_flip()+
+  scale_y_continuous(labels = function(x) paste0(x,"%"))+
   scale_fill_viridis_c(option = "mako")+
+  labs(x = "Country", y = "Average Change", title = "Summer Camping Rates for 2020/2021 as Compared to 2019", caption = "Note: Cyprus, France, Iceland, Ireland, Switzerland, and UK results are averages of incomplete data.")+
   theme_bw()
+  
