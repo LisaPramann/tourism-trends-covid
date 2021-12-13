@@ -1,0 +1,91 @@
+---
+  title: "Going back to normal? Observing tourism trends during the second pandemic year"
+subtitle: "Analying the effects of the pandemic on the travel sector and tourism"
+authors: "Kathryn Malchow, Lisa Pramann, Renato Franco"
+date: "Last edited `r format(Sys.time(), '%d %B %Y')`"
+output: 
+  html_document:
+  toc: TRUE
+toc_float: TRUE
+df_print: paged
+number_sections: FALSE
+highlight: tango
+theme: cosmo
+toc_depth: 3
+toc_float: true
+css: custom.css 
+self_contained: false
+includes:
+  after_body: footer.html
+---
+  
+  
+<style>
+body {
+color: #708090
+font-family: Calibri;
+border-color: #708090;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+
+# Writing part
+
+#Introduction and Context
+
+
+# Development
+
+
+Lisa
+
+```{r, message=F}
+
+
+
+```
+  
+  
+```{r, message=F}
+
+
+
+```
+
+Kathryn
+
+```{r, message=F}
+
+
+
+```
+
+
+```{r, message=F}
+
+
+
+```
+
+
+Renato
+
+```{r, message=F}
+
+
+
+```
+
+
+```{r, message=F}
+
+
+
+```
+
+
+# Conclusion
