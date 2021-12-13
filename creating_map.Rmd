@@ -11,9 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Libraries needed
 ```{r}
-library(foreign)
+
 library(tidyverse)
-library(readxl)
 library(sf)
 library(sp)
 library(tmap)
@@ -28,37 +27,6 @@ library(magick)
 ```
 
 ```{r}
-#Percentage change compared to 2019
-eurostat_total_percent <- read_excel("./99_data-sets-raw/Eurostat/eurostat-total-percentage.xlsx") %>%
-  mutate(across(where(is.character), ~na_if(., ":")))  %>% 
-  mutate_at(c(2:22), as.numeric, round, 2)
-
-eurostat_domestic_percent <- read_excel("./99_data-sets-raw/Eurostat/eurostat-domestic-percentage.xlsx") %>%
-  mutate(across(where(is.character), ~na_if(., ":"))) %>% 
-  mutate_at(c(2:22), as.numeric, round, 2)
-
-eurostat_domestic_camping_percent <- read_excel("./99_data-sets-raw/Eurostat/eurostat-domestic-camping-percentage.xlsx") %>%
-  mutate(across(where(is.character), ~na_if(., ":"))) %>% 
-  mutate_at(c(2:22), as.numeric, round, 2)
-
-eurostat_total_camping_percent <- read_excel("./99_data-sets-raw/Eurostat/eurostat-total-camping-percentage.xlsx") %>%
-  mutate(across(where(is.character), ~na_if(., ":"))) %>% 
-  mutate_at(c(2:22), as.numeric, round, 2)
-
---
-#First Trends: Generally domestic tourism is the same in July/August 2019 compared to 2020/21 
-#for some countries even increasing 
-#Domestic Tourists increasingly stayed ad campsites in July/August 2019 compared to 2020/21
-
-summer_total_perc <- eurostat_total_percent %>%
-  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`)) 
-
-summer_domestic_perc <- eurostat_domestic_percent %>%
-  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`)) 
-
-summer_domestic_camping_perc <- eurostat_domestic_camping_percent %>%
-  dplyr::select(c(States, `2020-07`,`2020-08`, `2021-07`, `2021-08`)) 
-
 #Try th source out the loading and data wrangling
 source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
 ```
@@ -79,6 +47,8 @@ europe_region = st_bbox(c(xmin = 2377294, xmax = 6453440,
 
 
 Create Interactive map for percentage change in total number of tourism (year total)
+
+NOT YET READY 
 ```{r}
 
 data_total_animation <- eurostat_total_percent %>% 
@@ -101,18 +71,21 @@ europe_animation_02 <- tm_shape(tourism_total_02.1, bbox = europe_region) +
   tm_polygons(
     col = "tourist_stays",
     border.col = "white",
+    pal = viridis(10, option = "mako", direction = 1),
+    midpoint = NA,
     border.alpha = 0.5,
-    breaks = c(-80,-60, -40, -30, -20, -10, 0, 10, 20),
+    breaks = c(-100, -80,-60, -40, -30, -20, -10, 0, 10, 20),
     title = "Change in %") +
   tm_legend(legend.position = c("right", "bottom")) +
   tm_layout(title = "Stays at Tourist Accomendations in Europe ",
-    title.size = 1.1,
+    title.size = 5,
     title.position = c("center", "top"),
+    legend.position = c("RIGHT","TOP"),
     frame = FALSE) +
   tm_facets(along = "year")
 
 tmap_animation(
-  europe_animation_02, filename = "graphs/tourism_total_2020_2021.gif", width = 1700, height = 1200,
+  europe_animation_02, filename = "graphs/tourism_total_2020_2021.gif", width = 2700, height = 2300,
   delay = 150
   )
 
