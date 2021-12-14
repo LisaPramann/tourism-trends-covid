@@ -1,5 +1,5 @@
 
-pacman::p_load(foreign, tidyverse, readxl, ggplot2, ggridges)
+pacman::p_load(foreign, tidyverse, readxl, ggplot2, ggridges, hrbrthemes)
 
 
 source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
@@ -36,9 +36,9 @@ sum_dom_camp_long %>%
 ggplot(mapping = aes(x = reorder(States, -average), y = average, fill = average)) +
   geom_col(position = "identity") + #have to specify identity or dodge otherwise it will add all the same average values together per country
   scale_y_continuous(labels = function(x) paste0(x,"%"))+
-  scale_fill_viridis_c(option = "mako")+
+  scale_fill_viridis_c(option = "mako", begin = 0.3, end = 0.9)+
   labs(x = "Country", y = "Average Change", title = "Summer Camping Rates for 2020/2021 as Compared to 2019", caption = "Note: France, Iceland, and Ireland results are averages of incomplete data.")+
-  theme_bw() +
+  theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
   
   
