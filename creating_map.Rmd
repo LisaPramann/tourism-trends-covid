@@ -60,8 +60,8 @@ europe_animation_02 <- tm_shape(tourism_total_02.1, bbox = europe_region) +
     title.size = 2.5,
     title.position = c("left", "top"),
     legend.position = c("RIGHT","TOP"),
-    legend.text.size = 1.7, 
-    legend.title.size = 1.6,
+    legend.text.size = 1.6, 
+    legend.title.size = 1.7,
     frame = FALSE) +
   tm_facets(along = "year")
 
