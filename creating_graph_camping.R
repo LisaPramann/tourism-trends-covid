@@ -27,6 +27,8 @@ sum_dom_camp_long %>%
   theme_bw()
 
 #version 2
+
+
 sum_dom_camp_long %>% 
   na.omit() %>% 
   group_by(States) %>% 
@@ -37,14 +39,13 @@ ggplot(mapping = aes(x = reorder(States, -average), y = average, fill = average)
   geom_col(position = "identity") + #have to specify identity or dodge otherwise it will add all the same average values together per country
   scale_y_continuous(labels = function(x) paste0(x,"%"))+
   scale_fill_viridis_c(option = "mako", begin = 0.3, end = 0.9)+
-  labs(x = "Country", y = "Average Change", title = "Summer Camping Rates for 2020/2021 as Compared to 2019", caption = "Note: France, Iceland, and Ireland results are averages of incomplete data.")+
+  labs(x = "Country", y = "Average Change", caption = "Source: Eurostat, 2021")+
   theme_minimal() +
+  guides(fill=guide_legend(title="Percentage"))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-  
-  
+
+ggsave(file = "graphs/camping_domestic.png", width = 9, height = 5)
 
 
-  
-  
-  
-  
+#title = "Summer Camping Rates for 2020/2021 as Compared to 2019"  
+#caption = "Note: France, Iceland, and Ireland results are averages of incomplete data."
