@@ -71,21 +71,23 @@ europe_animation_02 <- tm_shape(tourism_total_02.1, bbox = europe_region) +
   tm_polygons(
     col = "tourist_stays",
     border.col = "white",
-    pal = viridis(10, option = "mako", direction = 1),
+    pal = viridis(10, option = "mako", begin = 0.3, end = 1, direction = 1),
     midpoint = NA,
     border.alpha = 0.5,
     breaks = c(-100, -80,-60, -40, -30, -20, -10, 0, 10, 20),
     title = "Change in %") +
   tm_legend(legend.position = c("right", "bottom")) +
   tm_layout(title = "Stays at Tourist Accomendations in Europe ",
-    title.size = 5,
-    title.position = c("center", "top"),
+    title.size = 2.5,
+    title.position = c("left", "top"),
     legend.position = c("RIGHT","TOP"),
+    legend.text.size = 1.6, 
+    legend.title.size = 1.6,
     frame = FALSE) +
   tm_facets(along = "year")
 
 tmap_animation(
-  europe_animation_02, filename = "graphs/tourism_total_2020_2021.gif", width = 2700, height = 2300,
+  europe_animation_02, filename = "graphs/tourism_total_2020_2021.gif", width = 1700, height = 1500,
   delay = 150
   )
 
