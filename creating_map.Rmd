@@ -9,46 +9,25 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Libraries needed
+Import libraries and source scripts
 ```{r}
 
 library(tidyverse)
 library(sf)
 library(sp)
 library(tmap)
-library(rgeos)
-library(grid)
 library(viridis)
-#install.packages("giscoR")
-#install.packages("gifski")
-library(gifski)
-library(giscoR)
 library(magick)
-```
 
-```{r}
-#Try th source out the loading and data wrangling
+#Importing wrangled data-sets
 source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
-```
-
-
-Get Geo-Data
-```{r}
-# Get shapes
-europe_countries  <- gisco_get_countries(region = c("EU"), resolution = "3",
-  year = "2020",
-  epsg = "3035",)
-
-europe_region = st_bbox(c(xmin = 2377294, xmax = 6453440,
-                      ymin = 1313597, ymax = 5628510))
-#Change bbox later!
+#Get shape-files from Spatial-data 
+source("98_data-wrangling-scripts/glimpse_geo_data.R")
 ```
 
 
 
-Create Interactive map for percentage change in total number of tourism (year total)
-
-NOT YET READY 
+Create interactive map for percentage change in total number of tourism (total period of the pandemic)
 ```{r}
 
 data_total_animation <- eurostat_total_percent %>% 
@@ -75,13 +54,13 @@ europe_animation_02 <- tm_shape(tourism_total_02.1, bbox = europe_region) +
     midpoint = NA,
     border.alpha = 0.5,
     breaks = c(-100, -80,-60, -40, -30, -20, -10, 0, 10, 20),
-    title = "Change in %") +
+    title = "Change in % comp. to 2019") +
   tm_legend(legend.position = c("right", "bottom")) +
   tm_layout(title = "Stays at Tourist Accomendations in Europe ",
     title.size = 2.5,
     title.position = c("left", "top"),
     legend.position = c("RIGHT","TOP"),
-    legend.text.size = 1.6, 
+    legend.text.size = 1.7, 
     legend.title.size = 1.6,
     frame = FALSE) +
   tm_facets(along = "year")
@@ -93,107 +72,3 @@ tmap_animation(
 
 ```
 
-Create maps for percentage change in total number of tourism (year total)
-```{r}
-
-#Joining data sets to get spatial data 
-
-tourism_domestic_01 <- left_join( 
-  europe_countries, summer_domestic_perc,
-  by = c("NAME_ENGL" = "States" ))
-
-#Manipulating data set to get mean of domestic tourism for summer 2020/2021 
-
-tourism_domestic_summer_01 <- tourism_domestic_01 %>% 
-  dplyr::mutate("Summer 2020"= (`2020-07`+`2020-08`)/2, "Summer 2021" = (`2021-07`+`2021-08`)/2)
-```
-
-```{r}
-#Summer 2020
-map_summer2020_dt <- tm_shape(tourism_domestic_summer_01, bbox = europe_region) +
-  tm_polygons(
-    col = "Summer 2020",
-    border.col = "white",
-    border.alpha = 0.5,
-    breaks = c(-100,-40, -30, -20, -10, 0, 5, 10, 15, 20, 30, 40, 100),
-    title = "Change in %") +
-  tm_legend(legend.position = c("right", "bottom")) +
-  tm_layout(title = " Domestic Toursim - Stays at Accomendations in Europe (Jul/Aug 2020)",
-    title.size = 1.1,
-    title.position = c("center", "top"),
-    frame = FALSE)
-
-tmap_save(map_summer2020_dt, filename = "graphs/tourism_domestic_summer2020.png", 
-           width = 1800, height = 1200, asp=0)
-
-
-```
-
-```{r}
-#Summer 2021
-map_summer2021_dt <- tm_shape(tourism_domestic_summer_01, bbox = europe_region) +
-  tm_polygons(
-    col = "Summer 2021",
-    border.col = "white",
-    border.alpha = 0.5,
-    breaks = c(-100,-40, -30, -20, -10, 0, 5, 10, 15, 20, 30, 40, 100),
-    title = "Change in %") +
-  tm_legend(legend.position = c("right", "bottom")) +
-  tm_layout(
-    title = " Domestic Toursim - Stays at Accomendations in Europe (Jul/Aug 2021)",
-    title.size = 1.1,
-    title.position = c("center", "top"),
-    frame = FALSE)
-
-tmap_save(map_summer2021_dt, filename = "graphs/tourism_domestic_summer2021.png", 
-           width = 1800, height = 1200, asp=0)
-
-
-```
-
-Open Issues with tmap:
-- change bbox accordingly 
-- change legend and rename breaks 
-- add consitent colour palette 
-- add numbers to countries in png's 
-
-
-##Backlog 
-Backlog: Create Interactive map for percentage change in total number of tourism (summers)
-#```{r, eval = FALSE, include=FALSE}
-
-
-tourism_total_01 <- left_join( 
-  europe_countries, summer_total_perc,
-  by = c("NAME_ENGL" = "States" ))
-
-#Manipulating Data set 
-
-tourism_total_summer <- tourism_total_01 %>%
-  dplyr::mutate(`2020`= (`2020-07`+`2020-08`)/2, `2021` = (`2021-07`+`2021-08`)/2) %>% 
-  pivot_longer(., cols=11:12, names_to = "year", values_to = "tourist_stays")
-
-#Create the interactive map gif
-
-summer_europe_animation_01 <- tm_shape(tourism_total_summer, bbox = europe_region) +
-  tm_polygons(
-    col = "tourist_stays",
-    border.col = "white",
-    border.alpha = 0.5,
-    breaks = c(-80,-60, -40, -30, -20, -10, 0, 10),
-    title = "Change in %") +
-  tm_legend(legend.position = c("right", "bottom")) +
-  tm_layout(title = "Stays at Tourist Accomendations in Europe (Jul/Aug)",
-    title.size = 1.1,
-    title.position = c("center", "top")) +
-  tm_facets(along = "year")
-
-#change and adjust color/palette later on
-
-summer_europe_animation
-
-tmap_animation(
-  summer_europe_animation, filename = "graphs/tourism_summer_total.gif", width = 1700, height = 1200,
-  delay = 500 
-  )
-#```
