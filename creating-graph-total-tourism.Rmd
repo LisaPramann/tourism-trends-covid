@@ -74,6 +74,7 @@ l <- tourism_total_graph_02 %>%
   ) +
   #adjust layout and design
   xlab("Months of the Pandemic (March 2020 - September 2021)") +
+  labs(caption = "Source: Eurostat, 2021; Our World in Data, 2021") +
   theme_ipsum() +
   theme(
     axis.title.x = element_text(margin = margin(t = 20), hjust = 0.5),
