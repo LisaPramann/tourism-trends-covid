@@ -39,9 +39,11 @@ ggplot(mapping = aes(x = reorder(States, -average), y = average, fill = average)
   scale_y_continuous(labels = function(x) paste0(x,"%"))+
   scale_fill_viridis_c(option = "mako", begin = 0.3, end = 0.9)+
   labs(x = "Country", y = "Average Change", caption = "Source: Eurostat, 2021")+
-  theme_minimal() +
+  theme_ipsum() +
   guides(fill=guide_legend(title="Percentage"))+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title.y = element_text(hjust = 0.5),
+        axis.title.x = element_text(hjust = 0.5))
 
 ggsave(file = "graphs/camping_domestic.png", width = 9, height = 5)
 
