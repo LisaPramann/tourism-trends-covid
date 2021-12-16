@@ -21,7 +21,7 @@ library(magick)
 
 #Importing wrangled data-sets
 source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
-#Get shape-files from Spatial-data 
+#Get shape-files from Geo-Data script
 source("98_data-wrangling-scripts/glimpse_geo_data.R")
 ```
 
@@ -30,39 +30,51 @@ source("98_data-wrangling-scripts/glimpse_geo_data.R")
 Create interactive map for percentage change in total number of tourism (total period of the pandemic)
 ```{r}
 
-data_total_animation <- eurostat_total_percent %>% 
-  mutate_at(c(2:22), as.numeric, round, 2) %>% 
+data_total_animation <- eurostat_total_percent %>%
+  mutate_at(c(2:22), as.numeric, round, 2) %>%
   select(-c(`2020-01`, `2020-02`))
   
   
 #join with spatial data
-tourism_total_02 <- left_join( 
-  europe_countries, data_total_animation,
-  by = c("NAME_ENGL" = "States" ))
+tourism_total_02 <- left_join(europe_countries,
+                              data_total_animation,
+                              by = c("NAME_ENGL" = "States"))
 
 #glimpse(tourism_total_02)
 
 #Manipulating Data set 
-tourism_total_02.1<- tourism_total_02 %>%
-  pivot_longer(., cols= 6:24, names_to = "year", values_to = "tourist_stays")
+tourism_total_02.1 <- tourism_total_02 %>%
+  pivot_longer(.,
+               cols = 6:24,
+               names_to = "year",
+               values_to = "tourist_stays")
 
-europe_animation_02 <- tm_shape(tourism_total_02.1, bbox = europe_region) +
+europe_animation_02 <-
+  tm_shape(tourism_total_02.1, bbox = europe_region) +
   tm_polygons(
     col = "tourist_stays",
     border.col = "white",
-    pal = viridis(10, option = "mako", begin = 0.3, end = 1, direction = 1),
+    pal = viridis(
+      10,
+      option = "mako",
+      begin = 0.3,
+      end = 1,
+      direction = 1
+    ),
     midpoint = NA,
     border.alpha = 0.5,
-    breaks = c(-100, -80,-60, -40, -30, -20, -10, 0, 10, 20),
-    title = "Change in % comp. to 2019") +
+    breaks = c(-100,-75, -50, -25, 0, 25, 50),
+    labels = c("-100%", "-75%", "-50%", "-25%","0%","25%"),
+    title = "Tourist Stays"
+  ) +
   tm_legend(legend.position = c("right", "bottom")) +
-  tm_layout(title = "Stays at Tourist Accomendations in Europe ",
-    title.size = 2.5,
+  tm_layout(
     title.position = c("left", "top"),
-    legend.position = c("RIGHT","TOP"),
-    legend.text.size = 1.6, 
-    legend.title.size = 1.7,
-    frame = FALSE) +
+    legend.position = c("RIGHT", "TOP"),
+    legend.text.size = 1.6,
+    legend.title.size = 1.9,
+    frame = FALSE
+  ) +
   tm_facets(along = "year")
 
 tmap_animation(
@@ -70,5 +82,8 @@ tmap_animation(
   delay = 150
   )
 
+
+#title = "Stays at Tourist Accomendations in Europe ",
+#tm_layout( title.size = 2.5,
 ```
 
