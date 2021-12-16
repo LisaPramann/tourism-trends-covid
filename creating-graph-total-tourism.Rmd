@@ -43,10 +43,7 @@ tourism_total_graph_02 <- left_join(
 Creating the graph for the development of Europe's total tourism compared to 2019. 
 Adding a graph for the strengh of Covid-10 measures to the chart 
 ```{r}
-
-#p <- 
-  
-tourism_total_graph_02 %>% 
+l <- tourism_total_graph_02 %>% 
   ggplot(aes(x=Month)) +
   geom_line(aes(y = tourist_stays_percent), color = "#404788FF") +
   geom_line(aes(y = Covid_Measures_Index), color="#20A387FF") +
@@ -68,7 +65,7 @@ tourism_total_graph_02 %>%
     axis.title.y.right = element_text(color = "#20A387FF", size=10)
   )
 
-ggsave(file = "graphs/tourism_covid_measures.png", width = 9, height = 5)
+ggsave(l,file = "graphs/tourism_covid_measures.png", width = 9, height = 5)
 
 ```
 
@@ -76,11 +73,11 @@ ggsave(file = "graphs/tourism_covid_measures.png", width = 9, height = 5)
 Creating a graph  showing Europe's total tourism stays compared to 2019 for the summer 2020/2021.
 ```{r}
 #First, mutate the data set accordingly 
-sum_long = pivot_longer(summer_total_perc, !States, names_to = "date", values_to = "value")
+sum_long <- pivot_longer(summer_total_perc, !States, names_to = "date", values_to = "value")
 
 #creating the plot 
 
-sum_long %>% 
+n <- sum_long %>% 
   na.omit() %>% 
   group_by(States) %>% 
   mutate("average" = mean(value)) %>% 
@@ -95,9 +92,47 @@ ggplot(mapping = aes(x = reorder(States, -average), y = average, fill = average)
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 
-ggsave(file = "graphs/tourism_summer_total.png", width = 9, height = 5)
+ggsave(n, file = "graphs/tourism_summer_total.png", width = 9, height = 5)
 
 ```
+
+Save order of States for the comparing grapgh
+```{r}
+order <- sum_long %>% 
+  na.omit() %>% 
+  group_by(States) %>% 
+  mutate(average = mean(value)) %>% 
+  filter_at(vars(contains("States")), all_vars(! . %in% c("Euro area","European Union - 27 countries (from 2020)","European Union - 28 countries (2013-2020)","Malta", 
+  "United Kingdom","Liechtenstein","Norway", "Switzerland", "Cyprus", "Iceland"))) %>%  
+  arrange(desc(average)) %>%
+  distinct(States)
+```
+
+
+Creating a graph showing Europe's stringency measures for the summer 2020/2021
+```{r}
+
+
+graph_measures_summer <- left_join( 
+  order, data_covid_measures_nat, by = c("States" = "Entity"))
+
+graph_measures_summer$States  <- factor(graph_measures_summer$States, levels = graph_measures_summer$States)
+
+m <- graph_measures_summer %>% 
+ggplot(mapping = aes(x = States, 
+                     y = Covid_Index_Summer, fill = Covid_Index_Summer)) +
+  geom_col(position = "identity") + #have to specify identity or dodge otherwise it will add all the same average values together per country
+  scale_y_continuous(limits = c(0, 70), breaks = c(0,20, 40, 60)) +
+  scale_fill_viridis_c(option = "mako", begin = 0.3, end = 0.7, direction = 1)+
+  labs(x = "Country", y = "Covid Measures Aveage (in %)", title = "Covid Measures Aveage in the Summer 2020/2021")+
+  theme_ipsum() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggsave(m, file = "graphs/summer_covid_measures.png", width = 9, height = 5)
+
+```
+
+
 
   
   
