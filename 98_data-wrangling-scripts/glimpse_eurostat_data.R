@@ -10,7 +10,7 @@
 library(foreign)
 library(tidyverse)
 #install.packages("readxl")
-library(readxl)
+library(readxl) # to import exel-tables
 
 #Importing data and doing some formatting to include NAs, numeric values and shorter decimals
 

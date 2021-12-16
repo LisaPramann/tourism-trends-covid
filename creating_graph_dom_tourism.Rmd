@@ -10,23 +10,20 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-Load libraries and data sets from separate script 
+Load libraries and datasets from separate script 
 ```{r}
 library(tidyverse)
 library(hrbrthemes)
-library(plotly)
 library(viridis)
 source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
 ```
 
 Creating a graph showing Europe's domestic tourism stays compared to 2019 for the summer 2020/2021.
 ```{r}
-#First, mutate the data set accordingly 
+#First, mutate the data set accordingly to be able to create the average value  
 sum_dom_long = pivot_longer(summer_domestic_perc, !States, names_to = "date", values_to = "value")
 
-
-
-#creating the plot 
+#creating a barplot with ggplot
 sum_dom_long %>% 
   na.omit() %>% 
   group_by(States) %>% 
@@ -41,10 +38,11 @@ sum_dom_long %>%
   geom_col(position = "identity") + 
   #have to specify identity or dodge otherwise it will add all the same average values together per country
   scale_y_continuous(
-    breaks = c(-25, 0, 50, 100, 50),
+    breaks = c(-25, 0, 50, 100),
     labels = function(x)
       paste0(x, "%")
   ) +
+  #specify the layout and design
   scale_fill_viridis_c(option = "mako",
                        begin = 0.3,
                        end = 0.9) +
