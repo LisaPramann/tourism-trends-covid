@@ -50,12 +50,12 @@ freq_parks_visit <- eu_parks_mean %>%
                date_breaks = "2 month", date_minor_breaks = "month", 
                date_labels = "%m-%Y", name = "Months of the Pandemic (March 2020 - September 2021)") + 
   theme_minimal() + 
-    theme(axis.title.x = element_text(size = 10),
+    theme(axis.title.x = element_text(margin = margin(t = 15), size = 10),
           axis.title.y = element_text(size = 10),
          ) + 
   labs(caption = "Source: Our World in Data, 2021")
 
-#freq_parks_visit
+freq_parks_visit
 
 ggsave(freq_parks_visit, file = "graphs/freq_parks_visit.png", width = 9, height = 5)
 
