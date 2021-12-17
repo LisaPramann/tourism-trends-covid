@@ -3,8 +3,15 @@
 library(foreign)
 library(tidyverse)
 
-data_parks <- read.csv("./99_data-sets-raw/change-visitors-parks-covid-raw.csv")
+parks <- read.csv("./99_data-sets-raw/change-visitors-parks-covid.csv")
 
-#Problem: Data shows how the number of visitors to parks and outdoor spaces has changed compared 
-#to baseline days (the median value for the 5‑week period from January 3 to February 6, 2020).
-#Question: Can we change that? https://ourworldindata.org/covid-google-mobility-trends 
+names(parks) <- c('countries', 'iso', 'Days', 'parks')
+
+eurocountries <- c("Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia", "Finland", "France",
+                   "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherland",
+                   "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden")
+
+eu_parks <- parks %>%
+  filter(countries %in% eurocountries)
+
+
