@@ -55,14 +55,16 @@ freq_parks_visit <- eu_parks_mean %>%
          ) + 
   labs(caption = "Source: Our World in Data, 2021")
 
-freq_parks_visit
+#freq_parks_visit
+
+ggsave(freq_parks_visit, file = "graphs/freq_parks_visit.png", width = 9, height = 5)
 
 #title = "Frequency of Park Visits in numbers"
 #subtitle = "Change relative to the period before the Pandemic",
 ```
 
 
-
+Making the Graph of Park visits interactive
 ```{r}  
 
 interact_visits <- ggplotly(freq_parks_visit)
