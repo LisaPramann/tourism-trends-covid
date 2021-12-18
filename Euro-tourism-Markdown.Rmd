@@ -30,33 +30,52 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warnin
 # Development
 
 
-<center>
+
 
 #### Changes in tourism over the period of the pandemic in Europe
+<center>
 ![](./graphs/tourism_total_2020_2021.gif){width=700px}
 
-*words words Words*
+</center>
+
+<div style="text-align: right"> *Source: Eurostat, 2021; The map shows the change in percent in nights spent at tourist accommodations per month per country compared to 2019 (Data for France, Bulgaria, Greece, Cyprus and Ireland not yet available for the whole year 2021) * </div>
+
 
 
 #### Development of Tourism associated with the Stringency of Covid-19 Response Measures
+<center>
 ![](./graphs/tourism_covid_measures.png){width=700px}
-
+</center>
+<div style="text-align: right"> *The graph shows the change in percent in nights spent at tourist accommodations per month per country comp ared to 2019 accumulated for EU-27 and the development of the average stringency of an 0-100 (100 = strictest) index of covid response measures (e.g. lockdown, border controls etc. Further Information: https://ourworldindata.org/grapher/covid-stringency-index* </div>
 
 
 #### Average decline in Tourism and Stringency of Covid Response Measures in Summer 2020/2021
+<center>
 ```{r, echo=FALSE,out.width="50%", out.height="20%",fig.cap="caption",fig.show='hold',fig.align='center'}
 
 knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covid_measures.png'))
 
 ```
+</center>
+
+<div style="text-align: right"> *The graph shows average change in percent in nights spent at tourist accommodations of the months July and August in 2020 and 2021 per country compared to 2019; Malta and Cyprus were removed due to incomplete data.* </div>
+
 
 
 #### Domestic Tourism in the Summer 2020/2021
-![](./graphs/tourism_summer_domestic.png){width=700px}
 
+<center>
+![](./graphs/tourism_summer_domestic.png){width=700px}
+</center>
+
+<div style="text-align: right"> *The graph shows average index 0-100 (100 = strictest) for July and August in 2020 and 2021 of covid response measures (see above); Malta and Cyprus were removed due to incomplete data.* </div>
 
 #### Domestic Camping Rates Summer 2020/2021 as Compared to 2019
+<center>
 ![](./graphs/camping_domestic.png){width=700px}
+</center>
+
+<div style="text-align: right"> *Includes nights spent in camping grounds, recreational vehicle parks, and trailer parks. Malta and Cyprus were removed from the set due to incomplete data.* </div>
 
 
 
@@ -67,6 +86,7 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 
 
 #### Development of Parks Visits in Europe compared to pre Covid-19
+<center>
 ```{r, message=F, echo=FALSE, out.width="75%", out.height="50%"}
 
 
@@ -75,8 +95,8 @@ source("park_visits_graph_script.R")
 interact_visits
 
 ```
+</center>
 
+<div style="text-align: right"> *The graph shows average change in percent of parks visits in Europe from Google Mobility data. The percentage change is related to a baseline of days at the beginning of 2020 (the median value for the 5‑week period from January 3 to February 6, 2020).* </div>
 
 # Conclusion
-
-</center>
