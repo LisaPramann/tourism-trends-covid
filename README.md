@@ -49,3 +49,6 @@ Renato Franco:
 *
 *
 
+### License
+
+The material in this repository is made available under the [MIT license](http://opensource.org/licenses/mit-license.php). 
