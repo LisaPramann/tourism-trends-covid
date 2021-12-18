@@ -22,7 +22,7 @@ For the realization of the final data project we decided to look at the trends i
 
 - *Kathryn Malchow* created the Readme, worked on the visualization of camping rates and build that argument into the article and did the layout of the latter.
 
-- *Renato Franco* analysed the frequency of park visits in Europe other the last months included it in the text and build a fine story around our arguments. 
+- *Renato Franco* analysed the frequency of park visits in Europe over the last months included it in the text and build a fine story around our arguments. 
 
 
 ### Project Limitations 
