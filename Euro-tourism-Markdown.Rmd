@@ -23,10 +23,10 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warnin
 
 <br>
 <font size="4">
-**While the numbers of international tourism heavily decreased during the pandemic, the picture of Europe is more complex. We looked at the data and identified a few tendencies.** 
+***While the numbers of international tourism heavily decreased during the pandemic, the picture of Europe is more complex. We looked at the data and identified a few tendencies.*** 
 </font>
 <br>
-
+<br>
 
 <div style="text-align: justify">
   <font size="3">
@@ -86,7 +86,7 @@ Changes in tourism over the period of the pandemic in Europe
 <div style="text-align: right"> *The map shows the change in percent in nights spent at tourist accommodations per month per country compared to 2019 (Data for France, Bulgaria, Greece, Cyprus and Ireland not yet available for the whole year 2021). Source: Eurostat, 2021* </div>
 
 
-
+<br>
 <br>
 
 <font size=4>
@@ -100,7 +100,7 @@ Development of Tourism associated with the Stringency of Covid-19 Response Measu
 <div style="text-align: right"> *The graph shows the change in percent in nights spent at tourist accommodations per month per country comp ared to 2019 accumulated for EU-27 and the development of the average stringency of an 0-100 (100 = strictest) index of covid response measures (e.g. lockdown, border controls etc. Further information [here](https://ourworldindata.org/grapher/covid-stringency-index)*</div>
 
 
-
+<br>
 <br>
 
 <font size=4>
@@ -125,13 +125,13 @@ There are manifold potential reasons for such trends: Differences in Covid case 
  
 The average index of the stringency of pandemic countermeasures during the summer varied between European states. Especially in Italy, Spain, Portugal, and Greece, which had had particularly bad experiences during the first waves of the pandemic, measures remained severe during the summer months. The four countries also recorded the largest overall decline in tourists' stays compared to the summer season in 2019. The circumstances for the other countries are heterogeneous. That means that pandemic response measures are not the sole reason for the statistically recorded decline of tourists. Probably, the dependence on international tourism is equally important. 
 
-Most Americans, for example, prefer to spend vacations visiting the acropolis or the coliseum under the sun of southern Europe than engaging in outdoor sports in Scandinavia or visiting the nascent cities of the Baltic states. As a matter of fact, The Guardian reported during that summer that the greek industry sector sharply dipped by the EU-US travel ban causing the absence of direct flights arrivals from America. 
+Most Americans, for example, prefer to spend vacations visiting the acropolis or the coliseum under the sun of southern Europe than engaging in outdoor sports in Scandinavia or visiting the nascent cities of the Baltic states. As a matter of fact, [The Guardian](https://www.theguardian.com/world/2021/jun/12/americans-are-heaven-for-us-a-surge-in-us-visitors-throws-greece-a-lifeline) reported during that summer that the greek industry sector sharply dipped by the EU-US travel ban causing the absence of direct flights arrivals from America. 
 
 <br>
 
 #### Europeans staying at home in summer
 
-But what is the picture if we look only at the development of domestic tourism? Many EU citizens decided to travel at short notice during the past two summer seasons and often stayed in their own countries. Looking at the average change in nights stayed at tourist accommodations by nationals, this is true for most states which even experienced an increase in numbers compared to 2019. 
+But what is the picture if we look only at the development of domestic tourism? Many EU citizens decided to travel at short notice during the past two summer seasons and often [stayed in their own countries](https://www.mdr.de/nachrichten/deutschland/panorama/mdrfragt-umfrage-ergebnis-sommerurlaub-mehrheit-bleibt-in-deutschland-100.html). Looking at the average change in nights stayed at tourist accommodations by nationals, this is true for most states which even experienced an increase in numbers compared to 2019. 
 
 
 </font>
@@ -158,9 +158,9 @@ Surprisingly, Slovenians discovered the vibrancy of their small cities and the b
 
 #### Europeans discover outdoor activities
 
-As a result, camping has increased in popularity during the past two summers. Not only does camping provide entertainment in the open air, but it also allows for social distancing since every family brings their sleeping accommodations. The increased interest may also be due to an increase in pet ownership across Europe and the ability to take your dog camping instead of leaving them at a kennel or with a pet sitter.
+As a result, camping has increased in popularity during the past two summers. Not only does camping provide entertainment in the open air, but it also allows for social distancing since every family brings their sleeping accommodations. The increased interest may also be due to an [increase in pet ownership](https://www.economist.com/europe/2021/02/13/shelters-fear-an-influx-of-no-longer-wanted-lockdown-pets) across Europe and the ability to take your dog camping instead of leaving them at a kennel or with a pet sitter.
 
-This rising trend resulted in unprecedented sales in caravans and mobile homes. In Germany, caravan manufacturers have been hard-pressed to meet high consumer demand due to weak supply chains. The situation is similar across Europe, where production delays are causing a phenomenal market for used caravans. Reportedly, over 34,000 RVs were sold privately in the Netherlands this year. The industry has a growing share of young adult customers. Many manufacturers offer more affordable RV models, including features that appeal to active lifestyles.
+This rising trend resulted in unprecedented sales in caravans and mobile homes. In Germany, caravan manufacturers have been hard-pressed to meet [high consumer demand](https://www-spiegel-de.translate.goog/wirtschaft/service/reisemobile-in-der-corona-krise-deutsche-kaufen-noch-mehr-camper-als-2020-a-9b091197-c7d2-48e0-86b5-2d6bba6900ea?_x_tr_sl=de&_x_tr_tl=en&_x_tr_hl=de) due to weak supply chains. The situation is similar across Europe, where production delays are causing a phenomenal market for used caravans. Reportedly, over [34,000 RVs](https://www.dutchnews.nl/news/2021/08/coronavirus-boost-for-caravan-and-camper-van-sales/) were sold privately in the Netherlands this year. The industry has a growing share of young adult customers. Many manufacturers offer more [affordable RV models](https://www.cnbc.com/2017/08/11/rv-sales-soar-across-europe-and-us-as-people-fall-back-in-love-with-the-road-trip.html), including features that appeal to active lifestyles.
 
 Data from Eurostat on domestic tourism align with these sales numbers. On average, most EU States had an increase in nights spent on campsites during July and August in 2020 and 2021 compared to the same months in 2019. The graph below demonstrates this, with Slovenia, Belgium, and Ireland all having increases of over 50 percent. 
 </font>
@@ -181,7 +181,7 @@ Domestic Camping Rates as Compared to 2019
 
 <div style="text-align: justify">
   <font size="3">
-If the possibilities of traveling plummeted, Europeans discovered that outdoor activities could also be adventures. One of the indirect externalities of the confinement was the craving for spending better quality time outside, thus increasing the use and demand of public spaces such as streets and parks. The Lincoln institute reported the dilemma about cities as public good instead of a platform for the commute.
+If the possibilities of traveling plummeted, Europeans discovered that outdoor activities could also be adventures. One of the indirect externalities of the confinement was the craving for spending better quality time outside, thus increasing the use and demand of public spaces such as streets and parks. [The Lincoln institute](https://www.lincolninst.edu/publications/articles/2020-10-room-roam-pandemic-urban-parks-what-comes-next) reported the dilemma about cities as public good instead of a platform for the commute.
 
 In Europe, the beginning of the pandemic halted every activity. In addition to the cold, the generalized fear of acquiring the virus impelled people from getting outside frequently. However, as temperatures rose and vacations approached, the frequency of park visits soared even to comparisons with the years before covid. Looking at the numbers from Our World in Data, the summer months of 2020 revitalized park visits.
 
@@ -214,13 +214,15 @@ interact_visits
   <font size="3">
 The heightened demand could not remain unscattered amid the new crushing wave of the disease and the cold months as fall departed. However, a curious phenomenon happened. In 2021, the use of parks continuously increased without abrupt declines, contrary to 2020. It even saw visitors coming with a frequency higher than last year during the summer. The pandemic caused indirect effects that did not disappear after an abnormal year. The positive aspects of staying outside have created a demand for better quality time outdoors and the questioning of the purposes of the city and its public goods.
 
+<br>
+
 #### What does this mean for the future of tourism in Europe?
 
 If one thing is certain, the pandemic did not erase people's will to go on holiday. Almost two years after the virus breakthrough, society coped and adapted according to the possible circumstances. Certainly, there is still reservation about international traveling, especially transatlantic flights or required stays in crowded and closed airport lobbies. The effects of successive lockdowns and movement restrictions knocked out a key sector of the global economy that had direct ramifications with a myriad of services and industries. Thus, the direct intervention of governments to save entire sectors from bankruptcy highlighted the deep tie of such enterprises, like airlines, with the whole economic ecosystem. On the other side, it propelled a series of incentives for local and regional activities. The concept of traveling embraced not only long distances. Instead, it started to revolve around a day in the countryside or adventure-style camping overnights for newcomers. As a result, indirect benefits also appeared and surged, such as further demand for camping guides and caravans. 
 
-The increased contact with nature also has a sustainability effect. As flights heavily decreased in the first pandemic year and still not fully rebounded in the second, the carbon footprint of the whole industry decreased. Certainly, it will gradually increase as the sector recovers. Still, it's a signal that there are sustainable alternatives activities closer to home. 
+The increased contact with nature also has a sustainability effect. As flights heavily decreased in the first pandemic year and still not fully rebounded in the second, [the carbon footprint of the whole industry decreased](https://www.iea.org/articles/global-energy-review-co2-emissions-in-2020). Certainly, it will gradually increase as the sector recovers. Still, it's a signal that there are sustainable alternatives activities closer to home. 
 
-However, it also exposed structural problems ingrained in the tourism industry before the virus. Some cities and areas struggled with over-tourism before the pandemic. Hence the confinements could be a moment to develop creative solutions that would ease the damaging inflow of tourists. Instead, it saw an alternative line of citizens who would not be in the traditional crowds of visitors. Consequently, over-tourism became a policy problem that comprises the potential return of the Airbnb model and the threat to the lifestyles of its residents. The Washington Post exposed the dilemmas of national parks unprepared for the constant inflow of tourists and its unchanged frailty during the pandemic, as visitors from the great centers continued coming. Thus, the demand for better oversight and care highlights the pivotal role of governments in fixing the query.
+However, it also exposed structural problems ingrained in the tourism industry before the virus. Some cities and areas struggled with over-tourism before the pandemic. Hence the confinements could be a moment to develop creative solutions that would ease the damaging inflow of tourists. Instead, it saw an alternative line of citizens who would not be in the traditional crowds of visitors. Consequently, [over-tourism became a policy problem](https://www.lemonde.fr/economie/article/2021/12/17/la-grande-offensive-des-villes-contre-airbnb_6106394_3234.html) that comprises the potential return of the Airbnb model and the threat to the lifestyles of its residents. [The Washington Post](https://www.washingtonpost.com/world/europe/overtourism-europe-pandemic-travel/2021/07/01/ae3c35a8-d8df-11eb-8c87-ad6f27918c78_story.html) exposed the dilemmas of national parks unprepared for the constant inflow of tourists and its unchanged frailty during the pandemic, as visitors from the great centers continued coming. Thus, the demand for better oversight and care highlights the pivotal role of governments in fixing the query.
 
 Besides their economic role in supporting critical industries, governments are pressured to look inward on behalf of citizens unsatisfied with the hospitality of their cities. As the pandemic raged, public goods such as parks represented a haven for outdoor activities. During the consecutive pandemic years, the rebound of outdoor activities created a demand for public services that should serve the people. The increased conversation about the use of the city and its purpose for the people is a crucial policy problem. Thus, the transformation of cities towards a place more comfortable for society tends to increase in the next few years.
 
