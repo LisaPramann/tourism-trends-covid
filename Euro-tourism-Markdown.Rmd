@@ -1,7 +1,7 @@
 ---
-title: "Going back to normal? Observing tourism trends during the second pandemic year"
-subtitle: "Analying the effects of the pandemic on the travel sector and tourism"
-authors: "Kathryn Malchow, Lisa Pramann, Renato Franco"
+title: "How did Europeans Spend Their Summer Holidays? "
+subtitle: "Exploring the Covid-19 Pandemic’s Impact on European Tourism"
+authors: "by Kathryn Malchow, Lisa Pramann, Renato Franco"
 date: "Last edited `r format(Sys.time(), '%d %B %Y')`"
 output: 
   html_document:
@@ -21,19 +21,16 @@ includes:
 knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-
+<br>
+<br>
 <div style="text-align: justify">
   <font size="3">
 
-If there is an image that resonates with globalization for people's free movement, the scenario of a crowded airport is one of its most memorable symbols. A plane traveling across the Atlantic represented the possibility of boundless exploration, jumping across borders without hurdles or time inconveniences. 
+If there is an image that resonates with globalization for people's free movement, the scenario of a crowded airport is one of its most memorable symbols. A plane traveling across the Atlantic represented the possibility of boundless exploration, jumping across borders without hurdles or time inconveniences. Among the general eeriness of Spring 2020, one of the main reasons for the moment's uneasiness was the succession of shots that seemed out of place. At the apex of the pandemic first wave, the image of empty airports summarized the moment. Flying is not only an activity deeply philosophically related to human freedom, but a market that employs a tremendous amount of people and occupies a critical share of the global economy. 
 
-Among the general eeriness of Spring 2020, one of the main reasons for the moment's uneasiness was the succession of shots that seemed out of place. At the apex of the pandemic first wave, the image of empty airports summarized the moment. Flying is not only an activity deeply philosophically related to human freedom, but a market that employs a tremendous amount of people and occupies a critical share of the global economy. 
+According to the World Travel & Tourism Council, travel and tourism contributed to [10.4% of global GDP in 2019](https://wttc.org/Research/Economic-Impact). Such an astounding number sharply declined to 5.5% due to the outcomes of the pandemic. Suddenly, the sector entered in free fall, forcing governments to bail out airlines and leaving thousands unemployed or in retention schemes. The [World Tourism Organisation](https://www.unwto.org/international-tourism-and-covid-19) estimates a global decline in more than 70% international tourist arrivals compared with 2019.^[]
 
-According to the World Travel & Tourism Council, [travel and tourism contributed to 10.4% of global GDP in 2019](https://wttc.org/Research/Economic-Impact). Such an astounding number sharply declined to 5.5% due to the outcomes of the pandemic. Suddenly, the sector entered in free fall, forcing governments to bail out airlines and leaving thousands unemployed or in retention schemes. The World Tourism Organisation estimates a global decline in more than 70% international tourist arrivals compared with 2019.*
-
-In 2020, as the first wave of the pandemic receded and people left their houses, there was a mixed feeling of hope alongside fears that the sector could somehow recover. Instead of catastrophic predictions that the industry would not cope, it would mean a complete rescaling of it. The summer arrived with a general will to travel that entangled social distance with common destinations. Instead of far-away destinations, countryside visits or outdoor activities could have been a reliable alternative. 
-
-As the second year's end of the pandemic draws near, we checked the numbers. To examine the trend of tourist inflow and inspect if they adapted their vacation period or maintained old habits, prompting the sector to revert to the before times, even if in a diminished form.
+In 2020, as the first wave of the pandemic receded and people left their houses, there was a mixed feeling of hope alongside fears that the sector could somehow recover. Instead of catastrophic predictions that the industry would not cope, it would mean a complete rescaling of it. The summer arrived with a general will to travel that entangled social distance with common destinations. Instead of far-away destinations, countryside visits or outdoor activities could have been a reliable alternative. As the second year's end of the pandemic draws near, we checked the numbers. To examine the trend of tourist inflow and inspect if they adapted their vacation period or maintained old habits, prompting the sector to revert to the before times, even if in a diminished form.
 
 </font>
 </div>
@@ -72,7 +69,6 @@ In individual European countries, the situation varies. While southern Europe di
 
 <br>
 <br>
-<br>
 
 
 #### Changes in tourism over the period of the pandemic in Europe
@@ -85,7 +81,7 @@ In individual European countries, the situation varies. While southern Europe di
 
 
 
-
+<br>
 
 
 #### Development of Tourism associated with the Stringency of Covid-19 Response Measures
@@ -98,12 +94,12 @@ In individual European countries, the situation varies. While southern Europe di
 
 
 
-
+<br>
 
 
 #### Average decline in Tourism and Stringency of Covid Response Measures in Summer 2020/2021
 <center>
-```{r, echo=FALSE,out.width="50%", out.height="20%",fig.cap="caption",fig.show='hold',fig.align='center'}
+```{r, echo=FALSE,out.width="50%", out.height="20%",fig.show='hold',fig.align='center'}
 
 knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covid_measures.png'))
 
@@ -111,6 +107,8 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 </center>
 
 <div style="text-align: right"> *The left graph shows average index 0-100 (100 = strictest) for July and August in 2020 and 2021 of covid response measures (see above). The right graph shows average change in percent in nights spent at tourist accommodations of the months July and August in 2020 and 2021 per country compared to 2019. Malta and Cyprus were removed due to incomplete data.* </div>
+
+<br>
 
 <div style="text-align: justify">
   <font size="3">
@@ -123,6 +121,8 @@ The four countries also recorded the largest overall decline in tourists' stays 
 
 Most Americans, for example, prefer to spend vacations visiting the acropolis or the coliseum under the sun of southern Europe than engaging in outdoor sports in Scandinavia or visiting the nascent cities of the Baltic states. As a matter of fact, The Guardian reported during that summer that the greek industry sector sharply dipped by the EU-US travel ban causing the absence of direct flights arrivals from America. 
 
+<br>
+
 #### Europeans staying at home in summer
 
 But what is the picture if we look only at the development of domestic tourism? Many EU citizens decided to travel at short notice during the past two summer seasons and often stayed in their own countries. Looking at the average change in nights stayed at tourist accommodations by nationals, this is true for most states which even experienced an increase in numbers compared to 2019. 
@@ -131,8 +131,9 @@ But what is the picture if we look only at the development of domestic tourism? 
 </font>
 </div>
 
-#### Domestic Tourism in the Summer 2020/2021
-
+<font size=4>
+Domestic Tourism in the Summer 2020/2021
+</font>
 <center>
 ![](./graphs/tourism_summer_domestic.png){width=700px}
 </center>
