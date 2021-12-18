@@ -1,4 +1,5 @@
-# Going back to normal? Observing tourism trends during the Covid-19 pandemic 
+# Going back to normal? 
+##Observing tourism trends during the Covid-19 pandemic 
 
 ## Project Summary
 
@@ -15,12 +16,20 @@ Our **data journalism piece** evaluates Covid-19’s influence on tourism in Eur
 
 
 
-### Limitations to the Project 
+### Project Limitations 
 
 
 
 ## Contribution Statement:
-Lisa Pramann:
+
+- *Lisa Pramann* set up the project workflow and created the map and the graphs and the story around the overall number of tourism in Europe (time-series and summer months) and the the pandemic's impact on European domestic tourism. 
+
+- *Kathryn Malchow* created the Readme, worked on the visualization of camping rates and build that argument into the article. 
+
+- *Renato Franco* analysed the frequency of park visits in Europe other the last months included it in the text and build a fine story around our arguments. 
+
+
+OLD: 
 * "Stays at Tourist Accomodations in Europe" gif
 * "Developement of Tourist Overnight Stays in Europe and Covid 19 Restrictions" graph
 * "Tourist Stays in Summer 2020/2021 as Compared to 2019" graph
@@ -39,7 +48,7 @@ Renato Franco:
 
 ## References 
 
-### Used Packages 
+### Used R Packages 
 
 *
 *
@@ -50,5 +59,7 @@ Renato Franco:
 *
 
 ### License
+
+This repository provides the materials the the final Data Project that was created as part of the course [Introduction to Data Science](https://github.com/intro-to-data-science-21) taught by Simon Munzert at the Hertie School, Berlin, in Fall 2021.
 
 The material in this repository is made available under the [MIT license](http://opensource.org/licenses/mit-license.php). 
