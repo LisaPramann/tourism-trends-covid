@@ -1,5 +1,4 @@
-# Going back to normal? 
-# Observing tourism trends during the Covid-19 pandemic 
+# Going back to normal? -  Observing tourism trends during the Covid-19 pandemic 
 
 ## Project Summary
 
@@ -7,9 +6,9 @@ Our **data journalism piece** evaluates Covid-19’s influence on tourism in Eur
 
 ### Autors 
 
-- Renato Franco ([](ventocillarenato@gmail.com))
-- Kathryn Malchow ([](malchow.kathryn@gmail.com))
-- Lisa Pramann ([](lisa.pramann@gmail.com))
+- Renato Franco (ventocillarenato@gmail.com)
+- Kathryn Malchow (malchow.kathryn@gmail.com)
+- Lisa Pramann (lisa.pramann@gmail.com)
 
 
 ### Approach to the Project 
@@ -19,28 +18,12 @@ For the realization of the final data project we decided to look at the trends i
 
 ## Contribution Statement:
 
-- *Lisa Pramann* set up the project workflow, created the map, the graphs and the story around the overall number of tourism in Europe (time-series and summer months) in relation to the stingency of countermeasures and the the pandemic's impact on European domestic tourism. 
+- *Lisa Pramann* set up the project workflow, created the map, the graphs and the story around the overall number of tourism in Europe (time-series and summer months) in relation to the stringency of countermeasures and the the pandemic's impact on European domestic tourism. 
 
-- *Kathryn Malchow* created the Readme, worked on the visualization of camping rates and build that argument into the article. 
+- *Kathryn Malchow* created the Readme, worked on the visualization of camping rates and build that argument into the article and did the layout of the latter.
 
 - *Renato Franco* analysed the frequency of park visits in Europe other the last months included it in the text and build a fine story around our arguments. 
 
-
-OLD: 
-* "Stays at Tourist Accomodations in Europe" gif
-* "Developement of Tourist Overnight Stays in Europe and Covid 19 Restrictions" graph
-* "Tourist Stays in Summer 2020/2021 as Compared to 2019" graph
-* "Covid Measures Average in the Summer 2020/2021" graph
-* "Domestic Tourist Stays in the Summer 2020/2021 as compared to 2019" graph
-* Text for Total Tourist Stays and Domestic Summer Tourism
-
-Kathryn Malchow:
-* "Domestic Camping Rates as Compared to 2019" graph
-* Text for Domestic Camping Rates and Readme
-
-Renato Franco:
-* "Frequency of Park Visits in numbers" graph
-* Text for Introduction, Park Visits, and Conclusion 
 
 ### Project Limitations 
 
@@ -63,7 +46,7 @@ Our World in Data (2021). Parks and outdoor spaces [Data file]. Retrieved from h
 
 Our World in Data (2021). Covid-19: Stringency Index [Data file]. Retrieved from https://ourworldindata.org/covid-stringency-index#citation
 
-Find our R packages used [here]ADD LINK HERE LATER ()
+Find our R packages used [here] ADD LINK HERE LATER ()
 
 
 ### Further Resources used in the Article 
