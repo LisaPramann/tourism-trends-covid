@@ -31,15 +31,19 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warnin
 
 
 <center>
-![Development of tourism over the period of the pandemic in Europe associated with the stringency of covid response measures.](./graphs/tourism_total_2020_2021.gif){width=700px}
+
+#### Changes in tourism over the period of the pandemic in Europe
+![](./graphs/tourism_total_2020_2021.gif){width=700px}
+
+*words words Words*
+
+
+#### Development of Tourism associated with the Stringency of Covid-19 Response Measures
+![](./graphs/tourism_covid_measures.png){width=700px}
 
 
 
-![Tourism Covid Measures.](./graphs/tourism_covid_measures.png){width=700px}
-
-
-
-
+#### Average decline in Tourism and Stringency of Covid Response Measures in Summer 2020/2021
 ```{r, echo=FALSE,out.width="50%", out.height="20%",fig.cap="caption",fig.show='hold',fig.align='center'}
 
 knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covid_measures.png'))
@@ -47,14 +51,12 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 ```
 
 
-
-![Domestic Tourism in the Summer 2020/2021](./graphs/tourism_summer_domestic.png){width=700px}
-
-
-
-![Domestic Camping Rates as Compared to 2019](./graphs/camping_domestic.png){width=700px}
+#### Domestic Tourism in the Summer 2020/2021
+![](./graphs/tourism_summer_domestic.png){width=700px}
 
 
+#### Domestic Camping Rates Summer 2020/2021 as Compared to 2019
+![](./graphs/camping_domestic.png){width=700px}
 
 
 
@@ -63,6 +65,8 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 
 
 
+
+#### Development of Parks Visits in Europe compared to pre Covid-19
 ```{r, message=F, echo=FALSE, out.width="75%", out.height="50%"}
 
 
