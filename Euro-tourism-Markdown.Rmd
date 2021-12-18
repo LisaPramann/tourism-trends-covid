@@ -55,32 +55,18 @@ Lisa
 
 ![Domestic Camping Rates as Compared to 2019](./graphs/camping_domestic.png)
 
-```{r, message=F}
 
 
 
-```
-
-
-```{r, message=F}
 
 
 
-```
 
-
-Renato
-
-```{r, message=F}
-
-
-
-```
 
 
 ```{r, message=F}
-
-
+source("park_visits_graph_script.R")
+interact_visits
 
 ```
 
