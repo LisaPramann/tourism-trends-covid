@@ -30,11 +30,12 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warnin
 # Development
 
 
+<center>
+![Development of tourism over the period of the pandemic in Europe associated with the stringency of covid response measures.](./graphs/tourism_total_2020_2021.gif){width=700px}
 
-![Development of tourism over the period of the pandemic in Europe associated with the stringency of covid response measures.](./graphs/tourism_total_2020_2021.gif){px=500}
 
-![Tourism Covid Measures.](./graphs/tourism_covid_measures.png){px=500}
 
+![Tourism Covid Measures.](./graphs/tourism_covid_measures.png){width=700px}
 
 
 
@@ -47,13 +48,11 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 
 
 
-
-![Domestic Tourism in the Summer 2020/2021](./graphs/tourism_summer_domestic.png){px=500}
-
-
-![Domestic Camping Rates as Compared to 2019](./graphs/camping_domestic.png){px=500}
+![Domestic Tourism in the Summer 2020/2021](./graphs/tourism_summer_domestic.png){width=700px}
 
 
+
+![Domestic Camping Rates as Compared to 2019](./graphs/camping_domestic.png){width=700px}
 
 
 
@@ -62,7 +61,9 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 
 
 
-```{r, message=F, echo=FALSE}
+
+
+```{r, message=F, echo=FALSE, out.width="50%", out.height="50%"}
 
 
 source("park_visits_graph_script.R")
@@ -73,3 +74,5 @@ interact_visits
 
 
 # Conclusion
+
+</center>
