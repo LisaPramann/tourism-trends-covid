@@ -10,7 +10,7 @@ library(plotly)
 
 
 
-source("98_data-wrangling-scripts/glimpse_park_data.R")
+source("./98_data-wrangling-scripts/glimpse_park_data.R")
 
 
 eu_parks_mean <- eu_parks %>%
@@ -47,10 +47,8 @@ freq_parks_visit <- eu_parks_mean %>%
 
 
 
-#Making the Graph of Park visits interactive
-  
-
-interact_visits <- ggplotly(freq_parks_visit)
+#Making the Graph of Park visits interactive (done in Markdown)
+#interact_visits <- ggplotly(freq_parks_visit)
 #interact_visits
 
 

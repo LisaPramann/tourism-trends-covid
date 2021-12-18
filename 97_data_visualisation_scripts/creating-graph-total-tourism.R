@@ -1,25 +1,19 @@
----
-title: "Plot total tourism Europe"
-author: "Lisa Pramann"
-date: "12/9/2021"
-output: html_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-Load libraries and datasets from separate script as well as the geo-data
-```{r}
+#author: "Lisa Pramann"
+#date: "12/14/2021"
+
+#Load libraries and datasets from separate script as well as the geo-data
+
 library(tidyverse)
 library(hrbrthemes)
 library(viridis) # design choice for all graphs
-source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
-source("98_data-wrangling-scripts/glimpse_covid_measures_index_europe.R") 
-```
+source("./98_data-wrangling-scripts/glimpse_eurostat_data.R")
+source("./98_data-wrangling-scripts/glimpse_covid_measures_index_europe.R") 
 
-Mutating data sets  
-```{r}
+
+#Mutating data sets  
+
 
 #glimpse(eurostat_total_percent)
 
@@ -31,7 +25,7 @@ tourism_total_graph <- eurostat_total_percent %>%
   filter(States == "European Union - 27 countries (from 2020)") %>%
   mutate(Month = lubridate::ym(year)) %>%
   arrange(Month) 
-  
+
 #glimpse(tourism_total_graph)
 #glimpse(data_covid_measures)
 
@@ -39,12 +33,11 @@ tourism_total_graph <- eurostat_total_percent %>%
 tourism_total_graph_02 <- left_join(tourism_total_graph, data_covid_measures) %>%
   filter(!year == c("2020-01", "2020-02"))
 
-```
 
-Creating the graph for the development of Europe's total tourism compared to 2019. 
-Adding a geom_line for the stringency of Covid-response measures to the graph 
-It is reasonable to put them in one plot, because one variable is scaled in percent and the other variable as a Index (0-100). 
-```{r}
+
+#Creating the graph for the development of Europe's total tourism compared to 2019. 
+#Adding a geom_line for the stringency of Covid-response measures to the graph 
+#It is reasonable to put them in one plot, because one variable is scaled in percent and the other variable as a Index (0-100). 
 
 l <- tourism_total_graph_02 %>%
   ggplot(aes(x = Month)) +
@@ -83,14 +76,14 @@ l <- tourism_total_graph_02 %>%
   )
 
   
-ggsave(l,file = "graphs/tourism_covid_measures.png", width = 9, height = 5)
+ggsave(l,file = "./graphs/tourism_covid_measures.png", width = 9, height = 5)
 
 # ggtitle("Development of Tourist Overnight Stays in Europe and Covid-19 Restrictions") +
-```
 
 
-Creating a graph showing Europe's total tourism stays compared to 2019 for the summer 2020/2021.
-```{r}
+
+#Creating a graph showing Europe's total tourism stays compared to 2019 for the summer 2020/2021.
+
 #First, mutate the data set accordingly 
 sum_long <- pivot_longer(summer_total_perc, !States, names_to = "date", values_to = "value")
 
@@ -119,20 +112,21 @@ n <- sum_long %>%
                        end = 0.9) +
   labs(x = "Country", y = "Average Change", caption = "Source: Eurostat, 2021") +
   theme_ipsum() +
-  guides(fill = guide_legend(title = "Percentage")) +
+  guides(fill = guide_legend(title = "Percentage", size = 12)) +
   theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    axis.title.y = element_text(hjust = 0.5),
-    axis.title.x = element_text(hjust = 0.5)
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    axis.title.y = element_text(hjust = 0.5, size = 12),
+    axis.title.x = element_text(hjust = 0.5, size = 12),
+    plot.caption = element_text(size = 12)
   )
 
 
-ggsave(n, file = "graphs/tourism_summer_total.png", width = 9, height = 5)
+ggsave(n, file = "./graphs/tourism_summer_total.png", width = 9, height = 5)
 
-```
 
-Save order of states as in *n* for comparing graphs
-```{r}
+#Save order of states as in *n* for comparing graphs
+
 order <- sum_long %>% 
   na.omit() %>% 
   group_by(States) %>% 
@@ -140,11 +134,12 @@ order <- sum_long %>%
   filter_at(vars(contains("States")), all_vars(! . %in% c("Euro area","European Union - 27 countries (from 2020)","European Union - 28 countries (2013-2020)","Malta", "United Kingdom","Liechtenstein","Norway", "Switzerland", "Cyprus", "Iceland"))) %>%  
   arrange(desc(average)) %>%
   distinct(States)
-```
 
 
-Creating a graph showing the average of Europe's stringency of Covid response measures for the summer 2020/2021
-```{r}
+
+#Creating a graph showing the average of Europe's stringency of Covid 
+#response measures for the summer 2020/2021
+
 
 #Join data sets to be able to have the same order as the countries in plot n 
 
@@ -168,18 +163,13 @@ m <- graph_measures_summer %>%
   theme_ipsum() +
   guides(fill = guide_legend(title = "Index (0-100)")) +
   theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    axis.title.y = element_text(hjust = 0.5),
-    axis.title.x = element_text(hjust = 0.5)
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    axis.title.y = element_text(hjust = 0.5, size = 12),
+    axis.title.x = element_text(hjust = 0.5, size = 12),
+    plot.caption = element_text(size = 12)
   )
 
-ggsave(m, file = "graphs/summer_covid_measures.png", width = 9, height = 5)
+ggsave(m, file = "./graphs/summer_covid_measures.png", width = 9, height = 5)
   
 #title = "Covid Measures Average in the Summer 2020/2021"
-```
-
-
-
-  
-  
-

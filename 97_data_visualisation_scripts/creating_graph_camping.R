@@ -2,7 +2,7 @@
 pacman::p_load(foreign, tidyverse, readxl, ggplot2, ggridges, hrbrthemes)
 
 
-source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
+source("./98_data-wrangling-scripts/glimpse_eurostat_data.R")
 
 
 sum_dom_camp_long = pivot_longer(summer_domestic_camping_perc, !States, names_to = "date", values_to = "value")
@@ -25,7 +25,7 @@ ggplot(mapping = aes(x = reorder(States, -average), y = average, fill = average)
         axis.title.y = element_text(hjust = 0.5),
         axis.title.x = element_text(hjust = 0.5))
 
-ggsave(file = "graphs/camping_domestic.png", width = 9, height = 5)
+ggsave(file = "./graphs/camping_domestic.png", width = 9, height = 5)
 
 
 #title = "Summer Camping Rates for 2020/2021 as Compared to 2019"  

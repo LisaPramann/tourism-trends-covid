@@ -1,16 +1,7 @@
----
-title: "Mapping Tourism Trends from Eurostat"
-author: "Lisa Pramann"
-date: "12/5/2021"
-output: html_document
----
+#author: "Lisa Pramann"
+#date: "12/14/2021"
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-Import libraries and source scripts
-```{r}
+#Import libraries and source scripts
 
 library(tidyverse)
 library(sf) # necessary to work with spatial data
@@ -20,17 +11,17 @@ library(viridis) # design choice for all graphs
 library(magick) # needed for animation
 
 #Importing wrangled data-sets
-source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
+source("./98_data-wrangling-scripts/glimpse_eurostat_data.R")
 #Get shape-files from Geo-Data script
-source("98_data-wrangling-scripts/glimpse_geo_data.R")
-```
+source("./98_data-wrangling-scripts/glimpse_geo_data.R")
 
 
 
-Create interactive map for percentage change in total number of tourism (over the months of the pandemic)
-```{r}
+#Create interactive map for percentage change in total number of tourism 
+#(over the months of the pandemic)
 
-  
+
+
 #Join with spatial data
 tourism_total_02 <- left_join(europe_countries,
                               eurostat_total_percent,
@@ -45,6 +36,7 @@ tourism_total_02.1 <- tourism_total_02 %>%
                cols = 6:24,
                names_to = "year",
                values_to = "tourist_stays")
+
 
 #Design the actual map with tmap()
 europe_animation_02 <-
@@ -81,12 +73,9 @@ europe_animation_02 <-
 
 #Making the series of maps animated 
 tmap_animation(
-  europe_animation_02, filename = "graphs/tourism_total_2020_2021.gif", width = 1700, height = 1500,
+  europe_animation_02, filename = "./graphs/tourism_total_2020_2021.gif", width = 1700, height = 1500,
   delay = 150
-  )
-
+)
 
 #title = "Stays at Tourist Accomendations in Europe ",
 #tm_layout( title.size = 2.5,
-```
-

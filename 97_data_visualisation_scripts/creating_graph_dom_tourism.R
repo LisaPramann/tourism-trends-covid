@@ -1,26 +1,19 @@
----
-title: "creating_graph_dom_tourism"
-author: "Lisa Pramann"
-date: "12/14/2021"
-output: html_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+#title: "creating_graph_dom_tourism"
+#author: "Lisa Pramann"
+#date: "12/14/2021"
 
+#Load libraries and datasets from separate script 
 
-Load libraries and datasets from separate script 
-```{r}
 library(tidyverse)
 library(hrbrthemes)
 library(viridis)
-source("98_data-wrangling-scripts/glimpse_eurostat_data.R")
-```
+source("./98_data-wrangling-scripts/glimpse_eurostat_data.R")
 
-Creating a graph showing Europe's domestic tourism stays compared to 2019 for the summer 2020/2021.
-```{r}
-#First, mutate the data set accordingly to be able to create the average value  
+
+#Creating a graph showing Europe's domestic tourism stays compared to 2019 for the summer 2020/2021.
+#First, mutate the data set accordingly to be able to create the average value 
+
 sum_dom_long = pivot_longer(summer_domestic_perc, !States, names_to = "date", values_to = "value")
 
 #creating a barplot with ggplot
@@ -56,9 +49,6 @@ sum_dom_long %>%
   )
 
 
-ggsave(file = "graphs/tourism_summer_domestic.png", width = 9, height = 5)
+ggsave(file = "./graphs/tourism_summer_domestic.png", width = 9, height = 5)
 
 # title = "Domestic tourist stays in the Summer 2020/2021 as compared to 2019", caption = "Note: France, Iceland, and Ireland results are averages of incomplete data.")
-```
-
-
