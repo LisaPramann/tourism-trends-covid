@@ -1,5 +1,7 @@
-# Tourist Trends During Covid
+# Going back to normal? Observing tourism trends during the second pandemic year
 ### Executive Summary
+Our data journalism piece evaluates Corona 19’s influence on vacations in Europe. While overall nightly tourist stays declined in the past 2 years, domestic tourism increased for most countries during the summer months. Data shows Europeans didn’t give up their holidays altogether, but instead embraced “staycations”, including increased camping trips and visits to parks. The trend of appreciating the outdoors may linger past the pandemic’s effect. Park visits stayed relatively high in 2021 and more young adults are being drawn to RV vacations. No matter how Covid progresses, it seems Europeans will find a way to adventure, even if it’s not far from home. 
+
 #### Contribution Statement:
 Lisa Pramann:
 * "Stays at Tourist Accomodations in Europe" gif
