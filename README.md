@@ -51,8 +51,31 @@ Find our R packages used [here] ADD LINK HERE LATER ()
 
 ### Further Resources used in the Article 
 
-*
-*
+Clinch, M. (2017, August 11). 'RV sales soar across Europe and US as people fall back in love with the road trip'. CNBC. https://www.cnbc.com/2017/08/11/rv-sales-soar-across-europe-and-us-as-people-fall-back-in-love-with-the-road-trip.html
+
+Darko, B. (2021, August 29). 'Croatia thrilled at summer season success despite COVID-19'. AP News. https://apnews.com/article/lifestyle-business-europe-travel-coronavirus-pandemic-d008ced44d6c3f7d162d356e7981ef63
+
+Dutch News. (2021, August 06). 'Coronavirus boost for caravan and campervan sales'. https://www.dutchnews.nl/news/2021/08/coronavirus-boost-for-caravan-and-camper-van-sales/
+
+Ellyatt, H. (2020, May 27). 'La dolce vita? Italians embrace their freedom but crowded beaches and nightlife worry officials'. CNBC. https://www.cnbc.com/2020/05/27/italians-crowd-beaches-and-piazzas-worrying-officials-after-lockdown.html
+
+Guillou, C. (2021, December 17). 'La grande offensive des villes contre Airbnb'. Le Monde. https://www.lemonde.fr/economie/article/2021/12/17/la-grande-offensive-des-villes-contre-airbnb_6106394_3234.html
+
+International Energy Agency. (2021, March 02). 'Global Energy Review: CO2 Emissions in 2020'. https://www.iea.org/articles/global-energy-review-co2-emissions-in-2020
+
+Lincoln Institute for Land Policy. (2020, October 07). 'The Pandemic Has Underscored the Need for More Urban Parks. So What Comes Next?'. https://www.lincolninst.edu/publications/articles/2020-10-room-roam-pandemic-urban-parks-what-comes-next
+
+Mitteldeutsche Rundfunk. (2021, August 17). 'MDRfragt zum Sommerurlaub 2021: Mehrheit macht Urlaub in Deutschland'. https://www.mdr.de/nachrichten/deutschland/panorama/mdrfragt-umfrage-ergebnis-sommerurlaub-mehrheit-bleibt-in-deutschland-100.html
+
+Smith, H. (2021, June 12). 'Americans are heaven for us’: the surge in US visitors throwing Greece a lifeline'. The Guardian. https://www.theguardian.com/world/2021/jun/12/americans-are-heaven-for-us-a-surge-in-us-visitors-throws-greece-a-lifeline
+
+Spiegel (2021, August 18). 'Germans are buying even more campers than in 2020'. https://www-spiegel-de.translate.goog/wirtschaft/service/reisemobile-in-der-corona-krise-deutsche-kaufen-noch-mehr-camper-als-2020-a-9b091197-c7d2-48e0-86b5-2d6bba6900ea?_x_tr_sl=de&_x_tr_tl=en&_x_tr_hl=de
+
+The Economist (2021, February 11). 'Shelters fear an influx of no-longer-wanted lockdown pets'. https://www.economist.com/europe/2021/02/13/shelters-fear-an-influx-of-no-longer-wanted-lockdown-pets
+
+World Tourism Organization. (2021). 'International Tourism and covid-19'. https://www.unwto.org/international-tourism-and-covid-19
+
+World Travel & Tourism Council (2021). 'Economic Impact Reports'. https://wttc.org/Research/Economic-Impact
 
 ### License
 
