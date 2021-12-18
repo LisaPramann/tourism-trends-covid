@@ -47,7 +47,7 @@ The data used  and the findings of our project have some limitations:
 
 - Our World in Data (2021). Covid-19: Stringency Index [Data file]. Retrieved from https://ourworldindata.org/covid-stringency-index#citation
 
-Find our R packages used [here]("packages_references.Rmd")
+Find our R packages used [here]("~/packages_references.Rmd")
 
 
 ### Further Resources used in the Article 
