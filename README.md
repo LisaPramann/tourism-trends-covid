@@ -49,6 +49,7 @@ The data used  and the findings of our project have some limitations:
 - The Eurostat *tourism data* is still missing some values from France, Cyprus, Ireland, Greece and Bulgaria for some months, especially in the second half of 2021. When significant for the calculation of average values, we indicated this in our report. 
 - Our World in Data is providing a helpful *index of the stringency of Covid-19 response measures* including nine metrics (e.g. school closures,  stay-at-home requirements). It is however not entirely clear the index calculated. Please visit their [website](https://ourworldindata.org/covid-stringency-index) for further information  
 - The data for the *frequency in parks visits* from Our World in Data is retrieved from Google Mobility Data compares to baseline days (the median value for the 5‑week period from January 3 to February 6, 2020). This [guidance](https://support.google.com/covid19-mobility/answer/9825414?hl=en&ref_topic=9822927) elaborates on the potential impact of changes in weather and holiday seasons which explains the sharp increase. We find the data for the summer season are nevertheless well comparable and provides an overall picture of people's increased outdoor activities.   
+- The data on *tourists' nights spent on camp sites* for Eurostat only supports our argument if, in addition, we filter for domestic tourism. This is mainly due to the decline in international tourism which we hereby acknowledge.
 
 
 ## References 
