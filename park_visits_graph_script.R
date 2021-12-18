@@ -7,8 +7,7 @@ library(viridis)
 library(lubridate)
 library(magick)
 library(plotly)
-install.packages("htmlwidgets")
-library(htmlwidgets)
+
 
 
 source("98_data-wrangling-scripts/glimpse_park_data.R")
@@ -39,7 +38,7 @@ freq_parks_visit <- eu_parks_mean %>%
   ) + 
   labs(caption = "Source: Our World in Data, 2021")
 
-freq_parks_visit
+
 
 #ggsave(freq_parks_visit, file = "graphs/freq_parks_visit.png", width = 9, height = 5)
 
@@ -54,7 +53,7 @@ freq_parks_visit
 interact_visits <- ggplotly(freq_parks_visit)
 #interact_visits
 
-#htmlwidgets::saveWidget(interact_visits, "graphs/parks_visits.html")
+
 
 
 

@@ -5,13 +5,10 @@ authors: "Kathryn Malchow, Lisa Pramann, Renato Franco"
 date: "Last edited `r format(Sys.time(), '%d %B %Y')`"
 output: 
   html_document:
-  toc: TRUE
-toc_float: TRUE
 df_print: paged
 number_sections: FALSE
 highlight: tango
 theme: cosmo
-toc_depth: 3
 self_contained: false
 includes:
   after_body: footer.html
@@ -33,30 +30,28 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warnin
 # Development
 
 
-Lisa
 
-![Development of tourism over the period of the pandemic in Europe associated with the stringency of covid response measures.](./graphs/tourism_total_2020_2021.gif)
+![Development of tourism over the period of the pandemic in Europe associated with the stringency of covid response measures.](./graphs/tourism_total_2020_2021.gif){px=500}
 
-
-
-![Average decline in Tourism in the Summer 2020/2021.](./graphs/tourism_covid_measures.png)
-
-![Average decline in Tourism in the Summer 2020/2021.](./graphs/tourism_summer_total.png)
-![Stringency of Covid Response Measures in the Summer.](./graphs/summer_covid_measures.png)
+![Tourism Covid Measures.](./graphs/tourism_covid_measures.png){px=500}
 
 
 
 
 
+```{r, echo=FALSE,out.width="50%", out.height="20%",fig.cap="caption",fig.show='hold',fig.align='center'}
+
+knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covid_measures.png'))
+
+```
 
 
-![Domestic Tourism in the Summer 2020/2021](./graphs/tourism_summer_domestic.png)
 
 
-![Domestic Camping Rates as Compared to 2019](./graphs/camping_domestic.png)
+![Domestic Tourism in the Summer 2020/2021](./graphs/tourism_summer_domestic.png){px=500}
 
 
-
+![Domestic Camping Rates as Compared to 2019](./graphs/camping_domestic.png){px=500}
 
 
 
@@ -64,8 +59,14 @@ Lisa
 
 
 
-```{r, message=F}
+
+
+
+```{r, message=F, echo=FALSE}
+
+
 source("park_visits_graph_script.R")
+
 interact_visits
 
 ```
