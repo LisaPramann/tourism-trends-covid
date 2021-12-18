@@ -48,8 +48,9 @@ freq_parks_visit <- eu_parks_mean %>%
 
 
 #Making the Graph of Park visits interactive (done in Markdown)
-#interact_visits <- ggplotly(freq_parks_visit)
-#interact_visits
+
+interact_visits <- ggplotly(freq_parks_visit)
+interact_visits
 
 
 
