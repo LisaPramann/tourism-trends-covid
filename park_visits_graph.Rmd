@@ -19,8 +19,8 @@ library(viridis)
 library(lubridate)
 library(magick)
 library(plotly)
-install.packages("htmlwidgets")
-library(htmlwidgets)
+#install.packages("htmlwidgets")
+#library(htmlwidgets)
 
 
 source("98_data-wrangling-scripts/glimpse_park_data.R")

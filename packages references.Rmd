@@ -1,0 +1,76 @@
+---
+title: "R Packages Reference List"
+author: "Lisa Pramann"
+date: "12/18/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+pacman::p_load(foreign, tidyverse, readxl,  ggridges, hrbrthemes, viridis, tmap, sp, sf, magick, lubridate, plotly, giscoR, rgeos, )
+
+citation("readxl")
+citation("tidyverse")
+citation("ggridges")
+citation("hrbrthemes")
+citation("viridis")
+citation("tmap")
+citation("sp")
+citation("sf")
+citation("magick")
+citation("lubridate")
+citation("plotly")
+citation("giscoR")
+citation("rgeos")
+
+```
+
+**R Packages Reference List**
+
+
+Roger Bivand and Colin Rundel (2021). rgeos: Interface to Geometry Engine - Open Source
+  ('GEOS'). R package version 0.5-8. https://CRAN.R-project.org/package=rgeos
+  
+Claus O. Wilke (2021). ggridges: Ridgeline Plots in 'ggplot2'. R package version 0.5.3.
+  https://CRAN.R-project.org/package=ggridges
+  
+Simon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco Sciaini, and Cédric Scherer
+  (2021). Rvision - Colorblind-Friendly Color Maps for R. R package version 0.6.2.
+
+Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy with lubridate. Journal of
+  Statistical Software, 40(3), 1-25. URL https://www.jstatsoft.org/v40/i03/.
+
+Hernangómez D (2021). _giscoR: Download Map Data from GISCO API - Eurostat_. doi:
+10.5281/zenodo.4317946 (URL: https://doi.org/10.5281/zenodo.4317946), R package version 0.3.1,
+<URL: https://ropengov.github.io/giscoR/>.
+
+Jeroen Ooms (2021). magick: Advanced Graphics and Image-Processing in R. R package version
+  2.7.3. https://CRAN.R-project.org/package=magick
+ 
+Pebesma, E.J., R.S. Bivand, 2005. Classes and methods for spatial data in R. R News 5 (2),
+  https://cran.r-project.org/doc/Rnews/.
+
+Pebesma, E., 2018. Simple Features for R: Standardized Support for Spatial Vector Data. The R
+  Journal 10 (1), 439-446, https://doi.org/10.32614/RJ-2018-009
+  
+Roger S. Bivand, Edzer Pebesma, Virgilio Gomez-Rubio, 2013. Applied spatial data analysis with
+  R, Second edition. Springer, NY. https://asdar-book.org/
+  
+Bob Rudis (2017). hrbrthemes: Additional Themes, Theme Components and Utilities for 'ggplot2'. R
+  package version 0.1.0. https://CRAN.R-project.org/package=hrbrthemes
+  
+C. Sievert. Interactive Web-Based Data Visualization with R, plotly, and shiny. Chapman and
+  Hall/CRC Florida, 2020.  
+
+Tennekes M (2018). “tmap: Thematic Maps in R.” _Journal of Statistical Software_, *84*(6), 1-39.
+doi: 10.18637/jss.v084.i06 (URL: https://doi.org/10.18637/jss.v084.i06).
+  
+  
+Hadley Wickham and Jennifer Bryan (2019). readxl: Read Excel Files. R package version 1.3.1.
+  https://CRAN.R-project.org/package=readxl
+  
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686,
+  https://doi.org/10.21105/joss.01686
+  
+  

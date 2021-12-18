@@ -7,9 +7,9 @@ Our **data journalism piece** evaluates Covid-19’s influence on tourism in Eur
 
 ### Autors 
 
-- Renato Franco
-- Kathryn Malchow
-- Lisa Pramann ([twitter](https://twitter.com/pramannlisa))
+- Renato Franco ([](ventocillarenato@gmail.com))
+- Kathryn Malchow ([](malchow.kathryn@gmail.com))
+- Lisa Pramann ([](lisa.pramann@gmail.com))
 
 
 ### Approach to the Project 
