@@ -63,7 +63,7 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 
 
 
-```{r, message=F, echo=FALSE, out.width="50%", out.height="50%"}
+```{r, message=F, echo=FALSE, out.width="75%", out.height="50%"}
 
 
 source("park_visits_graph_script.R")
