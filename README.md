@@ -54,12 +54,19 @@ The data used  and the findings of our project have some limitations:
 
 ## References 
 
-### Used R Packages 
+### Datasets and Packages 
 
-*
-*
 
-### Further Resources 
+Eurostat (2021). Nights spent at tourist accommodation establishments - monthly data [Data file]. Retrieved from https://ec.europa.eu/eurostat/web/tourism/data/database 
+
+Our World in Data (2021). Parks and outdoor spaces [Data file]. Retrieved from https://ourworldindata.org/covid-google-mobility-trends#parks-and-outdoor-spaces
+
+Our World in Data (2021). Covid-19: Stringency Index [Data file]. Retrieved from https://ourworldindata.org/covid-stringency-index#citation
+
+Find our R packages used [here]ADD LINK HERE LATER ()
+
+
+### Further Resources used in the Article 
 
 *
 *
