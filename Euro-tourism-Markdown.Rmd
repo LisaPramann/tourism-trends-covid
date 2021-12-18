@@ -28,9 +28,17 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warnin
 
 
 # Development
+<center>
+![](./graphs/airport_empty.jpg){width=700px}
+</center>
 
+<div style="text-align: right"> *Source: Photo by @shawnanggg on Unsplash (2020)* </div>
 
+<center>
+![](./graphs/crwoded_beach.jpg){width=700px}
+</center>
 
+<div style="text-align: right"> *Tourists sunbathing in Italy, June 22, 2021. [REUTERS](https://www.reuters.com/world/uk/rising-delta-virus-absent-brits-dampen-europes-tourism-hopes-2021-07-01/)/Guglielmo Mangiapane*</div>
 
 #### Changes in tourism over the period of the pandemic in Europe
 <center>
@@ -38,7 +46,10 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warnin
 
 </center>
 
-<div style="text-align: right"> *Source: Eurostat, 2021; The map shows the change in percent in nights spent at tourist accommodations per month per country compared to 2019 (Data for France, Bulgaria, Greece, Cyprus and Ireland not yet available for the whole year 2021) * </div>
+<div style="text-align: right"> *The map shows the change in percent in nights spent at tourist accommodations per month per country compared to 2019 (Data for France, Bulgaria, Greece, Cyprus and Ireland not yet available for the whole year 2021). Source: Eurostat, 2021* </div>
+
+
+
 
 
 
@@ -46,7 +57,13 @@ knitr::opts_chunk$set(fig.align = 'center', echo = TRUE, message = FALSE, warnin
 <center>
 ![](./graphs/tourism_covid_measures.png){width=700px}
 </center>
-<div style="text-align: right"> *The graph shows the change in percent in nights spent at tourist accommodations per month per country comp ared to 2019 accumulated for EU-27 and the development of the average stringency of an 0-100 (100 = strictest) index of covid response measures (e.g. lockdown, border controls etc. Further Information: https://ourworldindata.org/grapher/covid-stringency-index* </div>
+
+
+<div style="text-align: right"> *The graph shows the change in percent in nights spent at tourist accommodations per month per country comp ared to 2019 accumulated for EU-27 and the development of the average stringency of an 0-100 (100 = strictest) index of covid response measures (e.g. lockdown, border controls etc. Further information [here](https://ourworldindata.org/grapher/covid-stringency-index)*</div>
+
+
+
+
 
 
 #### Average decline in Tourism and Stringency of Covid Response Measures in Summer 2020/2021
@@ -58,7 +75,10 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 ```
 </center>
 
-<div style="text-align: right"> *The graph shows average change in percent in nights spent at tourist accommodations of the months July and August in 2020 and 2021 per country compared to 2019; Malta and Cyprus were removed due to incomplete data.* </div>
+<div style="text-align: right"> *The left graph shows average index 0-100 (100 = strictest) for July and August in 2020 and 2021 of covid response measures (see above). The right graph shows average change in percent in nights spent at tourist accommodations of the months July and August in 2020 and 2021 per country compared to 2019. Malta and Cyprus were removed due to incomplete data.* </div>
+
+
+
 
 
 
@@ -68,7 +88,12 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 ![](./graphs/tourism_summer_domestic.png){width=700px}
 </center>
 
-<div style="text-align: right"> *The graph shows average index 0-100 (100 = strictest) for July and August in 2020 and 2021 of covid response measures (see above); Malta and Cyprus were removed due to incomplete data.* </div>
+<div style="text-align: right"> *The graph shows average index 0-100 (100 = strictest) for July and August in 2020 and 2021 of covid response measures (see above). Malta and Cyprus were removed due to incomplete data.* </div>
+
+
+
+
+
 
 #### Domestic Camping Rates Summer 2020/2021 as Compared to 2019
 <center>
@@ -76,10 +101,6 @@ knitr::include_graphics(c('graphs/tourism_summer_total.png', 'graphs/summer_covi
 </center>
 
 <div style="text-align: right"> *Includes nights spent in camping grounds, recreational vehicle parks, and trailer parks. Malta and Cyprus were removed from the set due to incomplete data.* </div>
-
-
-
-
 
 
 
@@ -96,6 +117,11 @@ interact_visits
 
 ```
 </center>
+
+
+
+
+
 
 <div style="text-align: right"> *The graph shows average change in percent of parks visits in Europe from Google Mobility data. The percentage change is related to a baseline of days at the beginning of 2020 (the median value for the 5‑week period from January 3 to February 6, 2020).* </div>
 
